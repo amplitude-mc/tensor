@@ -1,0 +1,46 @@
+{
+  "title.tensor": "Tensor",
+
+
+  "options.visuals": "Visuals",
+  "options.fixes": "Fixes",
+  "options.utility": "Utility",
+  "options.text": "Text Fields",
+  "options.dont_click": "Don't Click Here!!!",
+  "options.keybinds": "Keybinds",
+  "options.miscellaneous": "Miscellaneous",
+
+
+  "visuals.minceraft": "Minceraft",
+  "visuals.youtube_sub_count": "Youtube Sub Count",
+  "visuals.sprinting_text": "Sprinting Text",
+
+  "fixes.mac_scrolling_fix": "Mac Scrolling Fix",
+
+  "utility.permanent_sprint": "Permanent Sprint",
+  "utility.zoom_fov": "Zoom FOV",
+  "utility.zoom_fov.value": "Zoom FOV: %s",
+  "utility.item_use_cooldown": "Item Use Cooldown: %s",
+  "utility.item_use_cooldown_override_toggle": "IUC Override",
+
+  "text.youtube_api_key": "Youtube API Key: ",
+  "text.youtube": "Youtube Channel ID: ",
+  "text.subs": "Subscriber Count Text: ",
+
+  "dont_click.link": "Don't Click This Button!!",
+
+  "keybinds.zoom_key": "Zoom",
+  "keybinds.open_gui_key": "Open GUI",
+  "keybinds.free_look_key": "Free Look",
+  "keybinds.item_use_cooldown_override_key": "Item Use Cooldown Override",
+
+  "miscellaneous.no_portal_gui_closing": "No Portal GUI CLosing",
+
+
+  "key.category.utility": "Utility",
+  "key.category.miscellaneous": "Miscellaneous",
+  "key.category.toggles": "Toggles",
+
+
+  "toggle.item_use_cooldown": "[IUC Override has been set to (%s)]"
+}

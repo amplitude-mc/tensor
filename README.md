@@ -1,9 +1,9 @@
-# Fabric Example Mod
+# Tensor
 
-## Setup
+## Description
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+Cool mod with nice client side features.
 
 ## License
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+Using MIT license.

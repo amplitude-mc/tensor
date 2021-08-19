@@ -1,0 +1,31 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "tensor.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+  ],
+  "client": [
+    "TMixin_TitleScreen",
+    "TMixin_KeyBinding",
+    "TMixin_GameMenuScreen",
+
+    "feature.Minceraft_TitleScreen",
+    "feature.MacScrollingFix_Mouse",
+    "feature.Zoom_GameRenderer",
+    "feature.ToggleSprint_ClientPlayerEntity",
+    "feature.NoPortalGuiClosing_ClientPlayerEntity",
+    "feature.OpenGUI_MinecraftClient",
+    "feature.FreeLook_MinecraftClient",
+    "feature.FreeLook_Camera",
+    "feature.FreeLook_Entity",
+    "feature.ItemUseCooldown_MinecraftClient",
+
+    "optimization.Optimization_Quaternion"
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}
