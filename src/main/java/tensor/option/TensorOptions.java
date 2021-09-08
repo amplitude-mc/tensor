@@ -16,7 +16,7 @@ public class TensorOptions
     @Setting(FIXES)
     public static boolean macScrollingFix = false;
     
-    @Setting({UTILITY, KEYBINDS})
+    @Setting(KEYBINDS)
     @Key("keybinds.zoom_key")
     public static int zoom = GLFW.GLFW_KEY_C;
     public static KeyBinding zoomKey = new KeyBinding("keybinds.zoom_key", zoom, "key.category.utility");
@@ -30,12 +30,12 @@ public class TensorOptions
     @Setting
     public static boolean noPortalGUIClosing = false;
     
-    @Setting({MISCELLANEOUS, KEYBINDS})
+    @Setting(KEYBINDS)
     @Key("keybinds.open_gui_key")
     public static int openGUI = GLFW.GLFW_KEY_RIGHT_SHIFT;
     public static KeyBinding openGUIKey = new KeyBinding("keybinds.open_gui_key", openGUI, "key.category.miscellaneous");
     
-    @Setting({UTILITY, KEYBINDS})
+    @Setting(KEYBINDS)
     @Key("keybinds.free_look_key")
     public static int freeLook = GLFW.GLFW_KEY_LEFT_ALT;
     public static KeyBinding freeLookKey = new KeyBinding("keybinds.free_look_key", freeLook, "key.category.utility");
@@ -43,7 +43,7 @@ public class TensorOptions
     @Setting(UTILITY)
     public static double itemUseCooldown = 4.0D;
     
-    @Setting({TOGGLES, KEYBINDS})
+    @Setting(KEYBINDS)
     @Key("keybinds.item_use_cooldown_override_key")
     public static int itemUseCooldownOverride = GLFW.GLFW_KEY_U;
     public static KeyBinding itemUseCooldownOverrideKey = new KeyBinding("keybinds.item_use_cooldown_override_key", itemUseCooldownOverride, "key.category.toggles");

@@ -18,8 +18,6 @@ public class ItemUseCooldown_MinecraftClient
     @Shadow
     private int itemUseCooldown;
     
-    private static boolean toggleHeld = false;
-    
     @Redirect(method = "doItemUse", at = @At(value = "FIELD", target = "Lnet/minecraft/client/MinecraftClient;itemUseCooldown:I", opcode = Opcodes.PUTFIELD))
     private void changeItemUse(MinecraftClient client, int cooldown)
     {
@@ -27,18 +25,5 @@ public class ItemUseCooldown_MinecraftClient
             itemUseCooldown = (int) TensorOptions.itemUseCooldown;
         else
             itemUseCooldown = 4;
-    }
-    
-    @Inject(method = "tick", at = @At("HEAD"))
-    private void toggle(CallbackInfo info)
-    {
-        if(TensorOptions.itemUseCooldownOverrideKey.isPressed())
-            toggleHeld = true;
-        if(toggleHeld && !TensorOptions.itemUseCooldownOverrideKey.isPressed())
-        {
-            Tensor.settingsManager.setSetting("itemUseCooldownOverrideToggle", Boolean.valueOf(!TensorOptions.itemUseCooldownOverrideToggle).toString());
-            Tensor.client.inGameHud.setOverlayMessage(new TranslatableText("toggle.item_use_cooldown", TensorOptions.itemUseCooldownOverrideToggle), false);
-            toggleHeld = false;
-        }
     }
 }

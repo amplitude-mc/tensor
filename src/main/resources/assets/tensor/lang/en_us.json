@@ -18,8 +18,7 @@
   "fixes.mac_scrolling_fix": "Mac Scrolling Fix",
 
   "utility.permanent_sprint": "Permanent Sprint",
-  "utility.zoom_fov": "Zoom FOV",
-  "utility.zoom_fov.value": "Zoom FOV: %s",
+  "utility.zoom_fov": "Zoom FOV: %s",
   "utility.item_use_cooldown": "Item Use Cooldown: %s",
   "utility.item_use_cooldown_override_toggle": "IUC Override",
 
@@ -27,7 +26,7 @@
   "text.youtube": "Youtube Channel ID: ",
   "text.subs": "Subscriber Count Text: ",
 
-  "dont_click.link": "Don't Click This Button!!",
+  "dont_click.link": "Don't Click This Button!!!",
 
   "keybinds.zoom_key": "Zoom",
   "keybinds.open_gui_key": "Open GUI",
@@ -35,6 +34,8 @@
   "keybinds.item_use_cooldown_override_key": "Item Use Cooldown Override",
 
   "miscellaneous.no_portal_gui_closing": "No Portal GUI CLosing",
+  "miscellaneous.max_render_distance": "Max. Render Distance: %s",
+  "miscellaneous.max_render_distance_override_toggle": "Max. Rend. Dist. Override",
 
 
   "key.category.utility": "Utility",
@@ -42,5 +43,5 @@
   "key.category.toggles": "Toggles",
 
 
-  "toggle.item_use_cooldown": "[IUC Override has been set to (%s)]"
+  "toggle.item_use_cooldown": "IUC Override has been set to %s"
 }

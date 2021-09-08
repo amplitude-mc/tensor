@@ -20,6 +20,7 @@
     "feature.FreeLook_Camera",
     "feature.FreeLook_Entity",
     "feature.ItemUseCooldown_MinecraftClient",
+    "feature.ItemUseCooldownOverrideToggle_MinecraftClient",
 
     "optimization.Optimization_Quaternion"
   ],
