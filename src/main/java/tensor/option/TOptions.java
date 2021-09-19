@@ -45,4 +45,28 @@ public class TOptions
     public static final CyclingOption<Boolean> SPRINTING_TEXT = CyclingOption.create("visuals.sprinting_text",
         (gameOptions) -> TensorOptions.sprintingText,
         (gameOptions, option, value) -> settingsManager.setSetting("sprintingText", value.toString()));
+    
+    public static final CyclingOption<Boolean> WASD = CyclingOption.create("keystrokes.wasd",
+        (gameOptions) -> TensorOptions.wASD,
+        (gameOptions, option, value) -> settingsManager.setSetting("wASD", value.toString()));
+    
+    public static final CyclingOption<Boolean> MOUSE = CyclingOption.create("keystrokes.mouse",
+        (gameOptions) -> TensorOptions.mouse,
+        (gameOptions, option, value) -> settingsManager.setSetting("mouse", value.toString()));
+    
+    public static final CyclingOption<Boolean> SPACE = CyclingOption.create("keystrokes.space",
+        (gameOptions) -> TensorOptions.space,
+        (gameOptions, option, value) -> settingsManager.setSetting("space", value.toString()));
+    
+    public static final CyclingOption<Boolean> SHIFT = CyclingOption.create("keystrokes.shift",
+        (gameOptions) -> TensorOptions.shift,
+        (gameOptions, option, value) -> settingsManager.setSetting("shift", value.toString()));
+    
+    public static final CyclingOption<Boolean> CPS = CyclingOption.create("keystrokes.cps",
+        (gameOptions) -> TensorOptions.cPS,
+        (gameOptions, option, value) -> settingsManager.setSetting("cPS", value.toString()));
+    
+    public static final CyclingOption<Boolean> CPS_TEXT = CyclingOption.create("keystrokes.cps_text",
+        (gameOptions) -> TensorOptions.cPSText,
+        (gameOptions, option, value) -> settingsManager.setSetting("cPSText", value.toString()));
 }

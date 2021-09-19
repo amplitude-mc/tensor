@@ -27,9 +27,7 @@ public class MiscellaneousOptionsScreen extends GameOptionsScreen
         this.list.addAll(OPTIONS);
         this.addSelectableChild(this.list);
         this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height - 27, 200, 20, ScreenTexts.DONE, (button) ->
-        {
-            this.client.setScreen(this.parent);
-        }));
+            this.client.setScreen(this.parent)));
     }
     
     public void render(MatrixStack matrices, int x, int y, float delta)

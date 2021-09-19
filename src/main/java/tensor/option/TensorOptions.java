@@ -66,6 +66,24 @@ public class TensorOptions
     @Setting(TEXTFIELDS)
     public static String subscribersText = "Subscriber count: ";
     
+    @Setting(KEYSTROKES)
+    public static boolean wASD = false;
+    
+    @Setting(KEYSTROKES)
+    public static boolean mouse = false;
+    
+    @Setting(KEYSTROKES)
+    public static boolean space = false;
+    
+    @Setting(KEYSTROKES)
+    public static boolean shift = false;
+    
+    @Setting(KEYSTROKES)
+    public static boolean cPS = false;
+    
+    @Setting(KEYSTROKES)
+    public static boolean cPSText = false;
+    
     public static KeyBinding[] allKeys = new KeyBinding[] {zoomKey, openGUIKey, freeLookKey, itemUseCooldownOverrideKey};
     
     public static void setKeyCode(KeyBinding key, int keyCode)

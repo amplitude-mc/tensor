@@ -21,7 +21,6 @@ public class DontClickOptionsScreen extends GameOptionsScreen
     public void init()
     {
         this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height / 6 - 12, 200, 20, new TranslatableText("dont_click.link"), (button) ->
-        {
             this.client.setScreen(new ConfirmChatLinkScreen((openInBrowser) ->
             {
                 if(openInBrowser)
@@ -29,12 +28,9 @@ public class DontClickOptionsScreen extends GameOptionsScreen
                     Util.getOperatingSystem().open("https://bit.ly/IqT6zt");
                 }
                 this.client.setScreen(this);
-            }, "https://bit.ly/IqT6zt", true));
-        }));
+            }, "https://bit.ly/IqT6zt", true))));
         this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height / 6 + 168, 200, 20, ScreenTexts.DONE, (button) ->
-        {
-            this.client.setScreen(this.parent);
-        }));
+            this.client.setScreen(this.parent)));
     }
     
     public void render(MatrixStack matrices, int x, int y, float delta)

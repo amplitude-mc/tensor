@@ -6,6 +6,7 @@ import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawableHelper;
 import tensor.Tensor;
 import tensor.option.TensorOptions;
+import tensor.util.CPSCounter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,7 +16,7 @@ public class TextDrawer implements Drawer
 {
     public static String subs;
     private static TextDrawer textDrawer;
-    private MinecraftClient client;
+    private final MinecraftClient client;
     private static final List<String> texts = new ArrayList<>();
     
     private TextDrawer(MinecraftClient client)
@@ -28,6 +29,7 @@ public class TextDrawer implements Drawer
     {
         this.makeSubText();
         this.makeSprintText();
+        this.makeCPSText();
     }
     
     private void makeSubText()
@@ -89,6 +91,36 @@ public class TextDrawer implements Drawer
         });
     }
     
+    private void makeCPSText()
+    {
+        HudRenderCallback.EVENT.register((matrixStack, tickDelta) ->
+        {
+            if(!TensorOptions.cPSText)
+                return;
+            int count = 0;
+            for(int i = 0; i < TextDrawer.texts.size(); i++)
+            {
+                if(TextDrawer.texts.get(i).equals("cPSText"))
+                    break;
+                try
+                {
+                    if((boolean) Tensor.settingsManager.settings.get(TextDrawer.texts.get(i)).field.get(null))
+                        count++;
+                }
+                catch(IllegalAccessException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+            int m = this.client.getWindow().getHeight() / 3 + 9 * count;
+            TextRenderer renderer = this.client.textRenderer;
+            String text = "CPS: " + CPSCounter.leftCPS() + " | " + CPSCounter.rightCPS();
+            DrawableHelper.fill(matrixStack, 1, m - 1, renderer.getWidth(text) + 3, m + 8, -1873784752);
+            renderer.draw(matrixStack, "CPS: ", 2, m, 0xffffff);
+            renderer.draw(matrixStack, CPSCounter.leftCPS() + " | " + CPSCounter.rightCPS(), renderer.getWidth("CPS: ") + 2, m, 0x00ff00);
+        });
+    }
+    
     protected static TextDrawer getInstance()
     {
         if(TextDrawer.textDrawer == null)
@@ -100,6 +132,7 @@ public class TextDrawer implements Drawer
     {
         TextDrawer.texts.add("subCounter");
         TextDrawer.texts.add("sprintingText");
+        TextDrawer.texts.add("cPSText");
         Collections.sort(TextDrawer.texts);
     }
 }

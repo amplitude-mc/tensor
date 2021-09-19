@@ -5,6 +5,7 @@
   "options.visuals": "Visuals",
   "options.fixes": "Fixes",
   "options.utility": "Utility",
+  "options.keystrokes": "Keystrokes",
   "options.text": "Text Fields",
   "options.dont_click": "Don't Click Here!!!",
   "options.keybinds": "Keybinds",
@@ -21,6 +22,13 @@
   "utility.zoom_fov": "Zoom FOV: %s",
   "utility.item_use_cooldown": "Item Use Cooldown: %s",
   "utility.item_use_cooldown_override_toggle": "IUC Override",
+
+  "keystrokes.wasd": "WASD",
+  "keystrokes.mouse": "Mouse",
+  "keystrokes.space": "Space",
+  "keystrokes.shift": "Shift",
+  "keystrokes.cps": "CPS",
+  "keystrokes.cps_text": "CPS Text",
 
   "text.youtube_api_key": "Youtube API Key: ",
   "text.youtube": "Youtube Channel ID: ",

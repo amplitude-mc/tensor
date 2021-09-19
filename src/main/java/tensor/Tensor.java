@@ -10,6 +10,7 @@ import tensor.command.RickrollCommand;
 import tensor.hud.Drawers;
 import tensor.option.SettingsManager;
 import tensor.option.TensorOptions;
+import tensor.util.CPSCounter;
 import tensor.util.SubGetterThread;
 
 public class Tensor implements ClientModInitializer

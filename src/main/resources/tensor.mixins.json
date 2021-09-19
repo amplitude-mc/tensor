@@ -21,6 +21,8 @@
     "feature.FreeLook_Entity",
     "feature.ItemUseCooldown_MinecraftClient",
     "feature.ItemUseCooldownOverrideToggle_MinecraftClient",
+    "feature.CPS_MinecraftClient",
+    "feature.CPS_Mouse",
 
     "optimization.Optimization_Quaternion"
   ],

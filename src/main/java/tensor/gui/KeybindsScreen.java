@@ -41,9 +41,7 @@ public class KeybindsScreen extends GameOptionsScreen
             KeyBinding.updateKeysByCode();
         }));
         this.addDrawableChild(new ButtonWidget(this.width / 2 - 155 + 160, this.height - 29, 150, 20, ScreenTexts.DONE, (button) ->
-        {
-            this.client.setScreen(this.parent);
-        }));
+            this.client.setScreen(this.parent)));
     }
     
     public boolean mouseClicked(double mouseX, double mouseY, int button)
