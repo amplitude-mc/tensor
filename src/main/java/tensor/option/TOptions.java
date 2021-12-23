@@ -3,6 +3,7 @@ package tensor.option;
 import net.minecraft.client.option.CyclingOption;
 import net.minecraft.client.option.DoubleOption;
 import net.minecraft.text.TranslatableText;
+import tensor.util.ControlStuff;
 
 import static tensor.Tensor.settingsManager;
 
@@ -69,4 +70,28 @@ public class TOptions
     public static final CyclingOption<Boolean> CPS_TEXT = CyclingOption.create("keystrokes.cps_text",
         (gameOptions) -> TensorOptions.cPSText,
         (gameOptions, option, value) -> settingsManager.setSetting("cPSText", value.toString()));
+    
+    public static final CyclingOption<Boolean> FORWARD_CONTROL = CyclingOption.create("control.forward",
+        (gameOptions) -> ControlStuff.forwardControl,
+        (gameOptions, option, value) -> ControlStuff.forwardControl = !ControlStuff.forwardControl);
+    
+    public static final CyclingOption<Boolean> BACKWARD_CONTROL = CyclingOption.create("control.backward",
+        (gameOptions) -> ControlStuff.backwardControl,
+        (gameOptions, option, value) -> ControlStuff.backwardControl = !ControlStuff.backwardControl);
+    
+    public static final CyclingOption<Boolean> LEFT_CONTROL = CyclingOption.create("control.left",
+        (gameOptions) -> ControlStuff.leftControl,
+        (gameOptions, option, value) -> ControlStuff.leftControl = !ControlStuff.leftControl);
+    
+    public static final CyclingOption<Boolean> RIGHT_CONTROL = CyclingOption.create("control.right",
+        (gameOptions) -> ControlStuff.rightControl,
+        (gameOptions, option, value) -> ControlStuff.rightControl = !ControlStuff.rightControl);
+    
+    public static final CyclingOption<Boolean> JUMP_CONTROL = CyclingOption.create("control.jump",
+        (gameOptions) -> ControlStuff.jumpControl,
+        (gameOptions, option, value) -> ControlStuff.jumpControl = !ControlStuff.jumpControl);
+    
+    public static final CyclingOption<Boolean> SNEAK_CONTROL = CyclingOption.create("control.sneak",
+        (gameOptions) -> ControlStuff.sneakControl,
+        (gameOptions, option, value) -> ControlStuff.sneakControl = !ControlStuff.sneakControl);
 }

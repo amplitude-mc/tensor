@@ -7,6 +7,7 @@
   "options.utility": "Utility",
   "options.keystrokes": "Keystrokes",
   "options.text": "Text Fields",
+  "options.control": "Control",
   "options.dont_click": "Don't Click Here!!!",
   "options.keybinds": "Keybinds",
   "options.miscellaneous": "Miscellaneous",
@@ -33,6 +34,15 @@
   "text.youtube_api_key": "Youtube API Key: ",
   "text.youtube": "Youtube Channel ID: ",
   "text.subs": "Subscriber Count Text: ",
+
+  "control.forward": "Walk Forward",
+  "control.backward": "Walk Backward",
+  "control.left": "Strafe Left",
+  "control.right": "Strafe Right",
+  "control.jump": "Jump",
+  "control.sneak": "Sneak",
+  "control.attack": "Attack",
+  "control.use": "Use",
 
   "dont_click.link": "Don't Click This Button!!!",
 

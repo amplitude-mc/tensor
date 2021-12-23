@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "tensor",
-  "version": "2.1.1-beta",
+  "version": "2.2.0-beta",
 
   "name": "Tensor",
   "description": "A client side mod that adds some nice features",

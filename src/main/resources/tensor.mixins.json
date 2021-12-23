@@ -23,6 +23,7 @@
     "feature.ItemUseCooldownOverrideToggle_MinecraftClient",
     "feature.CPS_MinecraftClient",
     "feature.CPS_Mouse",
+    "feature.Control_MinecraftClient",
 
     "optimization.Optimization_Quaternion"
   ],

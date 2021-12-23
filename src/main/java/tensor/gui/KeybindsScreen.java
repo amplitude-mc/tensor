@@ -66,6 +66,7 @@ public class KeybindsScreen extends GameOptionsScreen
             if(keyCode == GLFW.GLFW_KEY_ESCAPE)
             {
                 this.gameOptions.setKeyCode(this.focusedBinding, InputUtil.UNKNOWN_KEY);
+                TensorOptions.setKeyCode(this.focusedBinding, InputUtil.UNKNOWN_KEY.getCode());
             }
             else
             {
