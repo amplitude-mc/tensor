@@ -89,7 +89,7 @@ public class YouTubeStuff
     {
         try
         {
-            URL url = new URL(this.uri + ParameterStringBuilder.getParamsString(this.parameters));
+            URL url = new URL(this.uri + getParamsString(this.parameters));
             HttpsURLConnection con = (HttpsURLConnection)url.openConnection();
             if(con != null)
             {
@@ -123,20 +123,17 @@ public class YouTubeStuff
         return this;
     }
     
-    private static class ParameterStringBuilder
+    static String getParamsString(Map<String, String> params) throws UnsupportedEncodingException
     {
-        static String getParamsString(Map<String, String> params) throws UnsupportedEncodingException
+        StringBuilder result = new StringBuilder();
+        for(Map.Entry<String, String> entry : params.entrySet())
         {
-            StringBuilder result = new StringBuilder();
-            for(Map.Entry<String, String> entry : params.entrySet())
-            {
-                result.append(URLEncoder.encode(entry.getKey(), "UTF-8"));
-                result.append("=");
-                result.append(URLEncoder.encode(entry.getValue(), "UTF-8"));
-                result.append("&");
-            }
-            String resultString = result.toString();
-            return resultString.length() > 0 ? '?' + resultString.substring(0, resultString.length() - 1) : resultString;
+            result.append(URLEncoder.encode(entry.getKey(), "UTF-8"));
+            result.append("=");
+            result.append(URLEncoder.encode(entry.getValue(), "UTF-8"));
+            result.append("&");
         }
+        String resultString = result.toString();
+        return resultString.length() > 0 ? '?' + resultString.substring(0, resultString.length() - 1) : resultString;
     }
 }

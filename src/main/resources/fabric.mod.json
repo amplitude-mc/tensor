@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "id": "tensor",
-  "version": "2.2.0-beta",
+  "version": "2.2.1-beta",
 
   "name": "Tensor",
   "description": "A client side mod that adds some nice features",
   "authors": [
-    "AmplitudeX"
+    "qmplitude"
   ],
   "contact": {
     "homepage": "",
-    "sources": "https://github.com/AmplitudeX/tensor"
+    "sources": "https://github.com/qmplitude/tensor"
   },
 
   "license": "MIT",
