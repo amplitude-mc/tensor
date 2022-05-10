@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "tensor",
-  "version": "1.0.0-pre1",
+  "version": "1.0.0-rc1",
 
   "name": "Tensor",
   "description": "A client side mod that adds some nice features",
@@ -9,7 +9,7 @@
     "amplitude-mc"
   ],
   "contact": {
-    "homepage": "https://github.com/amplitude-mc/tensor",
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/tensor",
     "sources": "https://github.com/amplitude-mc/tensor"
   },
 
