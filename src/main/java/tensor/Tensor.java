@@ -4,8 +4,8 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.command.v1.ClientCommandManager;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.minecraft.client.MinecraftClient;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import tensor.command.RickrollCommand;
 import tensor.hud.Drawers;
 import tensor.option.SettingsManager;
@@ -16,7 +16,7 @@ public class Tensor implements ClientModInitializer
 {
     public static SettingsManager settingsManager;
     public static final MinecraftClient client = MinecraftClient.getInstance();
-    public static Logger logger = LogManager.getLogger("tensor");
+    public static Logger logger = LoggerFactory.getLogger("tensor");
     
     @Override
     public void onInitializeClient()

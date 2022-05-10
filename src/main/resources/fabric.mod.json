@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "id": "tensor",
-  "version": "2.2.1-beta",
+  "version": "1.0.0-pre1",
 
   "name": "Tensor",
   "description": "A client side mod that adds some nice features",
   "authors": [
-    "qmplitude"
+    "amplitude-mc"
   ],
   "contact": {
-    "homepage": "",
-    "sources": "https://github.com/qmplitude/tensor"
+    "homepage": "https://github.com/amplitude-mc/tensor",
+    "sources": "https://github.com/amplitude-mc/tensor"
   },
 
   "license": "MIT",
@@ -27,9 +27,9 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.13.3",
     "fabric": "*",
-    "minecraft": "1.17.x",
+    "minecraft": "1.18.x",
     "java": ">=16"
   },
   "suggests": {

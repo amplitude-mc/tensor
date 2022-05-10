@@ -14,17 +14,17 @@ public class Control_MinecraftClient
     @Inject(method = "tick", at = @At("HEAD"))
     private void onTick(CallbackInfo info)
     {
-        if(!Tensor.client.options.keyForward.isPressed())
-            Tensor.client.options.keyForward.setPressed(ControlStuff.forwardControl);
-        if(!Tensor.client.options.keyBack.isPressed())
-            Tensor.client.options.keyBack.setPressed(ControlStuff.backwardControl);
-        if(!Tensor.client.options.keyLeft.isPressed())
-            Tensor.client.options.keyLeft.setPressed(ControlStuff.leftControl);
-        if(!Tensor.client.options.keyRight.isPressed())
-            Tensor.client.options.keyRight.setPressed(ControlStuff.rightControl);
-        if(!Tensor.client.options.keyJump.isPressed())
-            Tensor.client.options.keyJump.setPressed(ControlStuff.jumpControl);
-        if(!Tensor.client.options.keySneak.isPressed())
-            Tensor.client.options.keySneak.setPressed(ControlStuff.sneakControl);
+        if(!Tensor.client.options.forwardKey.isPressed())
+            Tensor.client.options.forwardKey.setPressed(ControlStuff.forwardControl);
+        if(!Tensor.client.options.backKey.isPressed())
+            Tensor.client.options.backKey.setPressed(ControlStuff.backwardControl);
+        if(!Tensor.client.options.leftKey.isPressed())
+            Tensor.client.options.leftKey.setPressed(ControlStuff.leftControl);
+        if(!Tensor.client.options.rightKey.isPressed())
+            Tensor.client.options.rightKey.setPressed(ControlStuff.rightControl);
+        if(!Tensor.client.options.jumpKey.isPressed())
+            Tensor.client.options.jumpKey.setPressed(ControlStuff.jumpControl);
+        if(!Tensor.client.options.sneakKey.isPressed())
+            Tensor.client.options.sneakKey.setPressed(ControlStuff.sneakControl);
     }
 }

@@ -15,13 +15,13 @@ public class TMixin_KeyBinding
 {
     @Shadow
     @Final
-    private static Map<String, Integer> categoryOrderMap;
+    private static Map<String, Integer> CATEGORY_ORDER_MAP;
     
     @Inject(method = "<init>", at = @At("RETURN"))
     private void addCategories(CallbackInfo info)
     {
-        categoryOrderMap.put("key.category.utility", 8);
-        categoryOrderMap.put("key.category.miscellaneous", 9);
-        categoryOrderMap.put("key.category.toggles", 10);
+        CATEGORY_ORDER_MAP.put("key.category.utility", 8);
+        CATEGORY_ORDER_MAP.put("key.category.miscellaneous", 9);
+        CATEGORY_ORDER_MAP.put("key.category.toggles", 10);
     }
 }

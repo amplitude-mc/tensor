@@ -39,10 +39,10 @@ public class KeystrokesDrawer implements Drawer
             int wASDHeight = 32 * this.client.getWindow().getWidth() / 2048;
             int startX = 1200 * this.client.getWindow().getWidth() / 2048;
             int startY = 32 * this.client.getWindow().getWidth() / 2048;
-            DrawableHelper.fill(matrixStack, startX + wASDWidth + gapDist, startY, startX + wASDWidth * 2 + gapDist, startY + wASDHeight, this.client.options.keyForward.isPressed() ? 0x64ffffff : 0x64000000);
-            DrawableHelper.fill(matrixStack, startX, startY + wASDHeight + gapDist, startX + wASDWidth, startY + wASDHeight * 2 + gapDist, this.client.options.keyLeft.isPressed() ? 0x64ffffff : 0x64000000);
-            DrawableHelper.fill(matrixStack, startX + wASDWidth + gapDist, startY + wASDHeight + gapDist, startX + wASDWidth * 2 + gapDist, startY + wASDHeight * 2 + gapDist, this.client.options.keyBack.isPressed() ? 0x64ffffff : 0x64000000);
-            DrawableHelper.fill(matrixStack, startX + wASDWidth * 2 + gapDist * 2, startY + wASDHeight + gapDist, startX + wASDWidth * 3 + gapDist * 2, startY + wASDHeight * 2 + gapDist, this.client.options.keyRight.isPressed() ? 0x64ffffff : 0x64000000);
+            DrawableHelper.fill(matrixStack, startX + wASDWidth + gapDist, startY, startX + wASDWidth * 2 + gapDist, startY + wASDHeight, this.client.options.forwardKey.isPressed() ? 0x64ffffff : 0x64000000);
+            DrawableHelper.fill(matrixStack, startX, startY + wASDHeight + gapDist, startX + wASDWidth, startY + wASDHeight * 2 + gapDist, this.client.options.leftKey.isPressed() ? 0x64ffffff : 0x64000000);
+            DrawableHelper.fill(matrixStack, startX + wASDWidth + gapDist, startY + wASDHeight + gapDist, startX + wASDWidth * 2 + gapDist, startY + wASDHeight * 2 + gapDist, this.client.options.backKey.isPressed() ? 0x64ffffff : 0x64000000);
+            DrawableHelper.fill(matrixStack, startX + wASDWidth * 2 + gapDist * 2, startY + wASDHeight + gapDist, startX + wASDWidth * 3 + gapDist * 2, startY + wASDHeight * 2 + gapDist, this.client.options.rightKey.isPressed() ? 0x64ffffff : 0x64000000);
         });
     }
     
@@ -59,8 +59,8 @@ public class KeystrokesDrawer implements Drawer
             int mouseHeight = 32 * this.client.getWindow().getWidth() / 2048;
             int startX = 1200 * this.client.getWindow().getWidth() / 2048;
             int startY = 32 * this.client.getWindow().getWidth() / 2048;
-            DrawableHelper.fill(matrixStack, startX, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0), startX + mouseWidth, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + mouseHeight, this.client.options.keyAttack.isPressed() ? 0x64ffffff : 0x64000000);
-            DrawableHelper.fill(matrixStack, startX + mouseWidth + gapDist, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0), startX + mouseWidth * 2 + gapDist, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + mouseHeight, this.client.options.keyUse.isPressed() ? 0x64ffffff : 0x64000000);
+            DrawableHelper.fill(matrixStack, startX, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0), startX + mouseWidth, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + mouseHeight, this.client.options.attackKey.isPressed() ? 0x64ffffff : 0x64000000);
+            DrawableHelper.fill(matrixStack, startX + mouseWidth + gapDist, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0), startX + mouseWidth * 2 + gapDist, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + mouseHeight, this.client.options.useKey.isPressed() ? 0x64ffffff : 0x64000000);
         });
     }
     
@@ -80,8 +80,8 @@ public class KeystrokesDrawer implements Drawer
             int innerBarHeight = 2 * this.client.getWindow().getWidth() / 2048;
             int startX = 1200 * this.client.getWindow().getWidth() / 2048;
             int startY = 32 * this.client.getWindow().getWidth() / 2048;
-            DrawableHelper.fill(matrixStack, startX, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + (TensorOptions.mouse ? mouseHeight + gapDist : 0), startX + barWidth, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + (TensorOptions.mouse ? mouseHeight + gapDist : 0) + barHeight, this.client.options.keyJump.isPressed() ? 0x64ffffff : 0x64000000);
-            DrawableHelper.fill(matrixStack, startX + (barWidth - innerBarWidth) / 2, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + (TensorOptions.mouse ? mouseHeight + gapDist : 0) + (barHeight - innerBarHeight) / 2, startX + barWidth - (barWidth - innerBarWidth) / 2, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + (TensorOptions.mouse ? mouseHeight + gapDist : 0) + barHeight - (barHeight - innerBarHeight) / 2, this.client.options.keyJump.isPressed() ? 0xff000000 : 0xffffffff);
+            DrawableHelper.fill(matrixStack, startX, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + (TensorOptions.mouse ? mouseHeight + gapDist : 0), startX + barWidth, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + (TensorOptions.mouse ? mouseHeight + gapDist : 0) + barHeight, this.client.options.jumpKey.isPressed() ? 0x64ffffff : 0x64000000);
+            DrawableHelper.fill(matrixStack, startX + (barWidth - innerBarWidth) / 2, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + (TensorOptions.mouse ? mouseHeight + gapDist : 0) + (barHeight - innerBarHeight) / 2, startX + barWidth - (barWidth - innerBarWidth) / 2, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + (TensorOptions.mouse ? mouseHeight + gapDist : 0) + barHeight - (barHeight - innerBarHeight) / 2, this.client.options.jumpKey.isPressed() ? 0xff000000 : 0xffffffff);
         });
     }
     
@@ -101,8 +101,8 @@ public class KeystrokesDrawer implements Drawer
             int innerBarHeight = wASDWidth / 4;
             int startX = 1200 * this.client.getWindow().getWidth() / 2048;
             int startY = 32 * this.client.getWindow().getWidth() / 2048;
-            DrawableHelper.fill(matrixStack, startX, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + (TensorOptions.mouse ? mouseHeight + gapDist : 0) + (TensorOptions.space ? barHeight + gapDist : 0), startX + barWidth, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + (TensorOptions.mouse ? mouseHeight + gapDist : 0) + (TensorOptions.space ? barHeight + gapDist : 0) + barHeight, this.client.options.keySneak.isPressed() ? 0x64ffffff : 0x64000000);
-            DrawableHelper.fill(matrixStack, startX + (barWidth - innerBarWidth) / 2, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + (TensorOptions.mouse ? mouseHeight + gapDist : 0) + (TensorOptions.space ? barHeight + gapDist : 0) + (barHeight - innerBarHeight) / 2, startX + barWidth - (barWidth - innerBarWidth) / 2, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + (TensorOptions.mouse ? mouseHeight + gapDist : 0) + (TensorOptions.space ? barHeight + gapDist : 0) + barHeight - (barHeight - innerBarHeight) / 2, this.client.options.keySneak.isPressed() ? 0xff000000 : 0xffffffff);
+            DrawableHelper.fill(matrixStack, startX, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + (TensorOptions.mouse ? mouseHeight + gapDist : 0) + (TensorOptions.space ? barHeight + gapDist : 0), startX + barWidth, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + (TensorOptions.mouse ? mouseHeight + gapDist : 0) + (TensorOptions.space ? barHeight + gapDist : 0) + barHeight, this.client.options.sneakKey.isPressed() ? 0x64ffffff : 0x64000000);
+            DrawableHelper.fill(matrixStack, startX + (barWidth - innerBarWidth) / 2, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + (TensorOptions.mouse ? mouseHeight + gapDist : 0) + (TensorOptions.space ? barHeight + gapDist : 0) + (barHeight - innerBarHeight) / 2, startX + barWidth - (barWidth - innerBarWidth) / 2, startY + (TensorOptions.wASD ? wASDHeight * 2 + gapDist * 2 : 0) + (TensorOptions.mouse ? mouseHeight + gapDist : 0) + (TensorOptions.space ? barHeight + gapDist : 0) + barHeight - (barHeight - innerBarHeight) / 2, this.client.options.sneakKey.isPressed() ? 0xff000000 : 0xffffffff);
         });
     }
     

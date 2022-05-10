@@ -52,7 +52,6 @@ public class SettingsManager
             {
                 if(settings.get(key).set(conf.get(key)) != null)
                 {
-                    Tensor.logger.info("Loaded setting " + key + " as " + conf.get(key) + " from " + id + ".conf");
                     Field field = TensorOptions.class.getField(key);
                     Key annotation = field.getAnnotation(Key.class);
                     if(annotation == null)

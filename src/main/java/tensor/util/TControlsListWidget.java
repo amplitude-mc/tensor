@@ -152,7 +152,7 @@ public class TControlsListWidget extends ElementListWidget<TControlsListWidget.E
             boolean bl2 = false;
             if(!this.binding.isUnbound())
             {
-                KeyBinding[] var13 = TControlsListWidget.this.client.options.keysAll;
+                KeyBinding[] var13 = TControlsListWidget.this.client.options.allKeys;
                 for(KeyBinding keyBinding : var13)
                 {
                     if(keyBinding != this.binding && this.binding.equals(keyBinding))
