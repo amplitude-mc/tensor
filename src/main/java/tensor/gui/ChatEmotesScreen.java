@@ -1,22 +1,22 @@
 package tensor.gui;
 
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.screen.ScreenTexts;
 import net.minecraft.client.gui.screen.option.GameOptionsScreen;
 import net.minecraft.client.gui.widget.ButtonListWidget;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.option.SimpleOption;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.screen.ScreenTexts;
 import net.minecraft.text.Text;
 import tensor.option.TOptions;
 
-public class ControlOptionsScreen extends GameOptionsScreen
+public class ChatEmotesScreen extends GameOptionsScreen
 {
     private static final SimpleOption<?>[] OPTIONS;
     private ButtonListWidget list;
     
-    public ControlOptionsScreen(Screen parent, GameOptions gameOptions, Text title)
+    public ChatEmotesScreen(Screen parent, GameOptions gameOptions, Text title)
     {
         super(parent, gameOptions, title);
     }
@@ -40,6 +40,6 @@ public class ControlOptionsScreen extends GameOptionsScreen
     
     static
     {
-        OPTIONS = new SimpleOption<?>[] {TOptions.FORWARD_CONTROL, TOptions.BACKWARD_CONTROL, TOptions.LEFT_CONTROL, TOptions.RIGHT_CONTROL, TOptions.JUMP_CONTROL, TOptions.SNEAK_CONTROL};
+        OPTIONS = new SimpleOption<?>[] {TOptions.WAVE_CHAT_EMOTE, TOptions.SHRUG_CHAT_EMOTE, TOptions.TABLEFLIP_CHAT_EMOTE, TOptions.TABLEBACK_CHAT_EMOTE, TOptions.GIMME_CHAT_EMOTE, TOptions.WIZARD_CHAT_EMOTE, TOptions.SKULL_CHAT_EMOTE, TOptions.SUS_CHAT_EMOTE, TOptions.HEART_CHAT_EMOTE, TOptions.STAR_CHAT_EMOTE, TOptions.ARROW_CHAT_EMOTE, TOptions.JAVA_CHAT_EMOTE};
     }
 }

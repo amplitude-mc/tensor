@@ -1,14 +1,13 @@
 package tensor.gui;
 
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.screen.ScreenTexts;
+import net.minecraft.screen.ScreenTexts;
 import net.minecraft.client.gui.screen.option.GameOptionsScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import tensor.Tensor;
 import tensor.option.TensorOptions;
 
@@ -25,15 +24,15 @@ public class TextFieldsScreen extends GameOptionsScreen
     
     public void init()
     {
-        this.youtubeAPIKey = new TextFieldWidget(this.textRenderer, this.width / 2, 35, 250, 20, this.youtubeAPIKey, new TranslatableText("text.youtube_api_key"));
+        this.youtubeAPIKey = new TextFieldWidget(this.textRenderer, this.width / 2, 35, 250, 20, this.youtubeAPIKey, Text.translatable("text.youtube_api_key"));
         this.youtubeAPIKey.setMaxLength(40);
         this.youtubeAPIKey.setText(TensorOptions.youtubeAPIKey);
         this.addSelectableChild(this.youtubeAPIKey);
-        this.youtubeIDText = new TextFieldWidget(this.textRenderer, this.width / 2, 65, 250, 20, this.youtubeIDText, new TranslatableText("text.youtube"));
+        this.youtubeIDText = new TextFieldWidget(this.textRenderer, this.width / 2, 65, 250, 20, this.youtubeIDText, Text.translatable("text.youtube"));
         this.youtubeIDText.setMaxLength(40);
         this.youtubeIDText.setText(TensorOptions.youtubeID);
         this.addSelectableChild(this.youtubeIDText);
-        this.subscribersText = new TextFieldWidget(this.textRenderer, this.width / 2, 95, 250, 20, this.subscribersText, new TranslatableText("text.subs"));
+        this.subscribersText = new TextFieldWidget(this.textRenderer, this.width / 2, 95, 250, 20, this.subscribersText, Text.translatable("text.subs"));
         this.subscribersText.setMaxLength(40);
         this.subscribersText.setText(TensorOptions.subscribersText);
         this.addSelectableChild(this.subscribersText);
@@ -59,9 +58,9 @@ public class TextFieldsScreen extends GameOptionsScreen
         this.youtubeAPIKey.render(matrices, x, y, delta);
         this.youtubeIDText.render(matrices, x, y, delta);
         this.subscribersText.render(matrices, x, y, delta);
-        drawCenteredText(matrices, this.textRenderer, new TranslatableText("text.youtube_api_key"), this.width / 2 - 150, 40, 16777215);
-        drawCenteredText(matrices, this.textRenderer, new TranslatableText("text.youtube"), this.width / 2 - 150, 70, 16777215);
-        drawCenteredText(matrices, this.textRenderer, new TranslatableText("text.subs"), this.width / 2 - 150, 100, 16777215);
+        drawCenteredText(matrices, this.textRenderer, Text.translatable("text.youtube_api_key"), this.width / 2 - 150, 40, 16777215);
+        drawCenteredText(matrices, this.textRenderer, Text.translatable("text.youtube"), this.width / 2 - 150, 70, 16777215);
+        drawCenteredText(matrices, this.textRenderer, Text.translatable("text.subs"), this.width / 2 - 150, 100, 16777215);
         drawCenteredText(matrices, this.textRenderer, this.title, this.width / 2, 15, 16777215);
         super.render(matrices, x, y, delta);
     }

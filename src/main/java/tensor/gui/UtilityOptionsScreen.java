@@ -1,19 +1,19 @@
 package tensor.gui;
 
-import tensor.option.TOptions;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.screen.ScreenTexts;
+import net.minecraft.screen.ScreenTexts;
 import net.minecraft.client.gui.screen.option.GameOptionsScreen;
 import net.minecraft.client.gui.widget.ButtonListWidget;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.option.GameOptions;
-import net.minecraft.client.option.Option;
+import net.minecraft.client.option.SimpleOption;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
+import tensor.option.TOptions;
 
 public class UtilityOptionsScreen extends GameOptionsScreen
 {
-    private static final Option[] OPTIONS;
+    private static final SimpleOption<?>[] OPTIONS;
     private ButtonListWidget list;
     
     public UtilityOptionsScreen(Screen parent, GameOptions gameOptions, Text title)
@@ -40,6 +40,6 @@ public class UtilityOptionsScreen extends GameOptionsScreen
     
     static
     {
-        OPTIONS = new Option[] {TOptions.PERMANENT_SPRINT, TOptions.ZOOM_FOV, TOptions.ITEM_USE_COOLDOWN, TOptions.ITEM_USE_COOLDOWN_OVERRIDE_TOGGLE};
+        OPTIONS = new SimpleOption<?>[] {TOptions.PERMANENT_SPRINT, TOptions.ZOOM_FOV, TOptions.ITEM_USE_COOLDOWN, TOptions.ITEM_USE_COOLDOWN_OVERRIDE_TOGGLE};
     }
 }

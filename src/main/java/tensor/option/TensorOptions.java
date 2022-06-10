@@ -25,7 +25,7 @@ public class TensorOptions
     public static boolean permanentSprint = false;
     
     @Setting(UTILITY)
-    public static double zoomFOV = 30.0D;
+    public static int zoomFOV = 30;
     
     @Setting
     public static boolean noPortalGUIClosing = false;
@@ -41,7 +41,7 @@ public class TensorOptions
     public static KeyBinding freeLookKey = new KeyBinding("keybinds.free_look_key", freeLook, "key.category.utility");
     
     @Setting(UTILITY)
-    public static double itemUseCooldown = 4.0D;
+    public static int itemUseCooldown = 4;
     
     @Setting(KEYBINDS)
     @Key("keybinds.item_use_cooldown_override_key")
@@ -83,6 +83,42 @@ public class TensorOptions
     
     @Setting(KEYSTROKES)
     public static boolean cPSText = false;
+    
+    @Setting(CHAT_EMOTES)
+    public static boolean waveChatEmote = false;
+    
+    @Setting(CHAT_EMOTES)
+    public static boolean shrugChatEmote = false;
+    
+    @Setting(CHAT_EMOTES)
+    public static boolean tableflipChatEmote = false;
+    
+    @Setting(CHAT_EMOTES)
+    public static boolean tablebackChatEmote = false;
+    
+    @Setting(CHAT_EMOTES)
+    public static boolean gimmeChatEmote = false;
+    
+    @Setting(CHAT_EMOTES)
+    public static boolean wizardChatEmote = false;
+    
+    @Setting(CHAT_EMOTES)
+    public static boolean skullChatEmote = false;
+    
+    @Setting(CHAT_EMOTES)
+    public static boolean susChatEmote = false;
+    
+    @Setting(CHAT_EMOTES)
+    public static boolean heartChatEmote = false;
+    
+    @Setting(CHAT_EMOTES)
+    public static boolean starChatEmote = false;
+    
+    @Setting(CHAT_EMOTES)
+    public static boolean arrowChatEmote = false;
+    
+    @Setting(CHAT_EMOTES)
+    public static boolean javaChatEmote = false;
     
     public static KeyBinding[] allKeys = new KeyBinding[] {zoomKey, openGUIKey, freeLookKey, itemUseCooldownOverrideKey};
     

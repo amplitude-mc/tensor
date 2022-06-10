@@ -1,7 +1,7 @@
 package tensor.mixin.feature;
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -22,7 +22,7 @@ public class ItemUseCooldownOverrideToggle_MinecraftClient
         if(toggleHeld && !TensorOptions.itemUseCooldownOverrideKey.isPressed())
         {
             Tensor.settingsManager.setSetting("itemUseCooldownOverrideToggle", Boolean.valueOf(!TensorOptions.itemUseCooldownOverrideToggle).toString());
-            Tensor.client.inGameHud.setOverlayMessage(new TranslatableText("toggle.item_use_cooldown", (TensorOptions.itemUseCooldownOverrideToggle ? "§a" : "§c") + TensorOptions.itemUseCooldownOverrideToggle), false);
+            Tensor.client.inGameHud.setOverlayMessage(Text.translatable("toggle.item_use_cooldown", (TensorOptions.itemUseCooldownOverrideToggle ? "§a" : "§c") + TensorOptions.itemUseCooldownOverrideToggle), false);
             toggleHeld = false;
         }
     }

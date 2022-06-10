@@ -2,13 +2,12 @@ package tensor.gui;
 
 import net.minecraft.client.gui.screen.ConfirmChatLinkScreen;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.screen.ScreenTexts;
+import net.minecraft.screen.ScreenTexts;
 import net.minecraft.client.gui.screen.option.GameOptionsScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Util;
 
 public class DontClickOptionsScreen extends GameOptionsScreen
@@ -20,7 +19,7 @@ public class DontClickOptionsScreen extends GameOptionsScreen
     
     public void init()
     {
-        this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height / 6 - 12, 200, 20, new TranslatableText("dont_click.link"), (button) ->
+        this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height / 6 - 12, 200, 20, Text.translatable("dont_click.link"), (button) ->
             this.client.setScreen(new ConfirmChatLinkScreen((openInBrowser) ->
             {
                 if(openInBrowser)

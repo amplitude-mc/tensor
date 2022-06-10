@@ -3,6 +3,7 @@
 
 
   "options.visuals": "Visuals",
+  "options.chat_emotes": "Chat Emotes",
   "options.fixes": "Fixes",
   "options.utility": "Utility",
   "options.keystrokes": "Keystrokes",
@@ -16,6 +17,19 @@
   "visuals.minceraft": "Minceraft",
   "visuals.youtube_sub_count": "Youtube Sub Count",
   "visuals.sprinting_text": "Sprinting Text",
+
+  "chat_emotes.wave_chat_emote": "o/ ",
+  "chat_emotes.shrug_chat_emote": ":shrug: ",
+  "chat_emotes.tableflip_chat_emote": ":tableflip: ",
+  "chat_emotes.tableback_chat_emote": ":tableback: ",
+  "chat_emotes.gimme_chat_emote": ":gimme: ",
+  "chat_emotes.wizard_chat_emote": ":wizard: ",
+  "chat_emotes.skull_chat_emote": ":skull: ",
+  "chat_emotes.sus_chat_emote": ":sus: ",
+  "chat_emotes.heart_chat_emote": ":heart: ",
+  "chat_emotes.star_chat_emote": ":star: ",
+  "chat_emotes.arrow_chat_emote": ":arrow: ",
+  "chat_emotes.java_chat_emote": ":java: ",
 
   "fixes.mac_scrolling_fix": "Mac Scrolling Fix",
 

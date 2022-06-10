@@ -2,7 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "tensor.mixin",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
   "client": [
@@ -24,6 +24,7 @@
     "feature.CPS_MinecraftClient",
     "feature.CPS_Mouse",
     "feature.Control_MinecraftClient",
+    "feature.ChatEmoji_ClientPlayerEntity",
 
     "optimization.Optimization_Quaternion"
   ],

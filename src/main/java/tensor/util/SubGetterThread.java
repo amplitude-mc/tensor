@@ -1,5 +1,6 @@
 package tensor.util;
 
+import net.minecraft.client.MinecraftClient;
 import tensor.Tensor;
 import tensor.hud.TextDrawer;
 import tensor.option.TensorOptions;
@@ -19,15 +20,18 @@ public class SubGetterThread implements Runnable
     {
         try
         {
-            while(Tensor.client.isRunning())
+            while(MinecraftClient.getInstance() != null)
             {
-                TextDrawer.subs = YouTubeStuff.getSubs(TensorOptions.youtubeID);
-                Thread.sleep(12000);
+                if(Tensor.client.isRunning())
+                {
+                    TextDrawer.subs = YouTubeStuff.getSubs(TensorOptions.youtubeID);
+                    Thread.sleep(12000);
+                }
             }
         }
         catch(InterruptedException e)
         {
-            System.out.println("interrupted");
+            Tensor.logger.error("interrupted");
         }
     }
 }

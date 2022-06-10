@@ -40,9 +40,9 @@ public class TControlsListWidget extends ElementListWidget<TControlsListWidget.E
             if(!string2.equals(string))
             {
                 string = string2;
-                this.addEntry(new CategoryEntry(new TranslatableText(string2)));
+                this.addEntry(new CategoryEntry(Text.translatable(string2)));
             }
-            Text text = new TranslatableText(keyBinding.getTranslationKey());
+            Text text = Text.translatable(keyBinding.getTranslationKey());
             int i = client.textRenderer.getWidth(text);
             if(i > this.maxKeyNameLength)
             {
@@ -118,10 +118,10 @@ public class TControlsListWidget extends ElementListWidget<TControlsListWidget.E
             {
                 protected MutableText getNarrationMessage()
                 {
-                    return binding.isUnbound() ? new TranslatableText("narrator.controls.unbound", bindingName) : new TranslatableText("narrator.controls.bound", bindingName, super.getNarrationMessage());
+                    return binding.isUnbound() ? Text.translatable("narrator.controls.unbound", bindingName) : Text.translatable("narrator.controls.bound", bindingName, super.getNarrationMessage());
                 }
             };
-            this.resetButton = new ButtonWidget(0, 0, 50, 20, new TranslatableText("controls.reset"), (button) ->
+            this.resetButton = new ButtonWidget(0, 0, 50, 20, Text.translatable("controls.reset"), (button) ->
             {
                 TControlsListWidget.this.client.options.setKeyCode(binding, binding.getDefaultKey());
                 KeyBinding.updateKeysByCode();
@@ -129,7 +129,7 @@ public class TControlsListWidget extends ElementListWidget<TControlsListWidget.E
             {
                 protected MutableText getNarrationMessage()
                 {
-                    return new TranslatableText("narrator.controls.reset", bindingName);
+                    return Text.translatable("narrator.controls.reset", bindingName);
                 }
             };
         }
@@ -173,11 +173,11 @@ public class TControlsListWidget extends ElementListWidget<TControlsListWidget.E
             }
             if(bl)
             {
-                this.editButton.setMessage((new LiteralText("> ")).append(this.editButton.getMessage().shallowCopy().formatted(Formatting.YELLOW)).append(" <").formatted(Formatting.YELLOW));
+                this.editButton.setMessage((Text.literal("> ")).append(this.editButton.getMessage().copy().formatted(Formatting.YELLOW)).append(" <").formatted(Formatting.YELLOW));
             }
             else if(bl2)
             {
-                this.editButton.setMessage(this.editButton.getMessage().shallowCopy().formatted(Formatting.RED));
+                this.editButton.setMessage(this.editButton.getMessage().copy().formatted(Formatting.RED));
             }
             this.editButton.render(matrices, mouseX, mouseY, tickDelta);
         }

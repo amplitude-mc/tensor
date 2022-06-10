@@ -1,8 +1,7 @@
 package tensor;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.command.v1.ClientCommandManager;
-import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.minecraft.client.MinecraftClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,9 +25,9 @@ public class Tensor implements ClientModInitializer
         settingsManager.loadSettings();
         new SubGetterThread();
         Drawers.drawAll();
-        CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) ->
+        ClientCommandRegistrationCallback.EVENT.register((dispatcher, dedicated) ->
         {
-            RickrollCommand.register(ClientCommandManager.DISPATCHER);
+            RickrollCommand.register(dispatcher);
         });
     }
 }

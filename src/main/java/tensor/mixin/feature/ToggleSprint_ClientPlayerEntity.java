@@ -1,5 +1,6 @@
 package tensor.mixin.feature;
 
+import net.minecraft.network.encryption.PlayerPublicKey;
 import tensor.option.TensorOptions;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.input.Input;
@@ -19,9 +20,9 @@ public abstract class ToggleSprint_ClientPlayerEntity extends AbstractClientPlay
     @Shadow
     public Input input;
     
-    public ToggleSprint_ClientPlayerEntity(ClientWorld world, GameProfile profile)
+    public ToggleSprint_ClientPlayerEntity(ClientWorld world, GameProfile profile, PlayerPublicKey playerPublicKey)
     {
-        super(world, profile);
+        super(world, profile, playerPublicKey);
     }
     
     @Inject(method = "tickMovement", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/player/PlayerAbilities;allowFlying:Z", ordinal = 1))

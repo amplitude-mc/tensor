@@ -119,7 +119,7 @@ public class YouTubeStuff
     
     private YouTubeStuff addParameter(String name, String value)
     {
-        parameters.put(name, value);
+        this.parameters.put(name, value);
         return this;
     }
     

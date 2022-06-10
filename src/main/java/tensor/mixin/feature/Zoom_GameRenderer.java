@@ -22,7 +22,7 @@ public class Zoom_GameRenderer
     {
         if(TensorOptions.zoomKey.isPressed())
         {
-            info.setReturnValue(TensorOptions.zoomFOV);
+            info.setReturnValue((double) TensorOptions.zoomFOV);
             client.options.smoothCameraEnabled = true;
             zoomed = true;
         }
