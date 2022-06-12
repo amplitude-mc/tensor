@@ -151,4 +151,20 @@ public class TOptions
     public static final SimpleOption<Boolean> JAVA_CHAT_EMOTE = SimpleOption.ofBoolean("chat_emotes.java_chat_emote",
         TensorOptions.javaChatEmote,
         (value) -> settingsManager.setSetting("javaChatEmote", value.toString()));
+    
+    public static final SimpleOption<Boolean> CONFUSED_CHAT_EMOTE = SimpleOption.ofBoolean("chat_emotes.confused_chat_emote",
+        TensorOptions.confusedChatEmote,
+        (value) -> settingsManager.setSetting("confusedChatEmote", value.toString()));
+    
+    public static final SimpleOption<Boolean> UNAMUSED_CHAT_EMOTE = SimpleOption.ofBoolean("chat_emotes.unamused_chat_emote",
+        TensorOptions.unamusedChatEmote,
+        (value) -> settingsManager.setSetting("unamusedChatEmote", value.toString()));
+    
+    public static final SimpleOption<Boolean> PRAY_CHAT_EMOTE = SimpleOption.ofBoolean("chat_emotes.pray_chat_emote",
+        TensorOptions.prayChatEmote,
+        (value) -> settingsManager.setSetting("prayChatEmote", value.toString()));
+    
+    public static final SimpleOption<Boolean> KIRBY_CHAT_EMOTE = SimpleOption.ofBoolean("chat_emotes.kirby_chat_emote",
+        TensorOptions.kirbyChatEmote,
+        (value) -> settingsManager.setSetting("kirbyChatEmote", value.toString()));
 }

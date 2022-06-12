@@ -36,6 +36,14 @@ public class ChatEmoji_ClientPlayerEntity
             message = message.replaceAll(":arrow:", "➜");
         if(TensorOptions.javaChatEmote)
             message = message.replaceAll(":java:", "☕");
+        if(TensorOptions.confusedChatEmote)
+            message = message.replaceAll(":confused:", "¯\\(°_o)/¯");
+        if(TensorOptions.unamusedChatEmote)
+            message = message.replaceAll(":unamused:", "(ㆆ_ㆆ)");
+        if(TensorOptions.prayChatEmote)
+            message = message.replaceAll(":pray:", "(╯˘ -˘ )╯");
+        if(TensorOptions.kirbyChatEmote)
+            message = message.replaceAll(":kirby:", "(っ^‿^)っ");
         return message;
     }
 }

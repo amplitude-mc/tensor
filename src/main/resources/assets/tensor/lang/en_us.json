@@ -30,6 +30,10 @@
   "chat_emotes.star_chat_emote": ":star: ",
   "chat_emotes.arrow_chat_emote": ":arrow: ",
   "chat_emotes.java_chat_emote": ":java: ",
+  "chat_emotes.confused_chat_emote": ":confused: ",
+  "chat_emotes.unamused_chat_emote": ":unamused: ",
+  "chat_emotes.pray_chat_emote": ":pray: ",
+  "chat_emotes.kirby_chat_emote": ":kirby: ",
 
   "fixes.mac_scrolling_fix": "Mac Scrolling Fix",
 

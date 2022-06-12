@@ -120,6 +120,18 @@ public class TensorOptions
     @Setting(CHAT_EMOTES)
     public static boolean javaChatEmote = false;
     
+    @Setting(CHAT_EMOTES)
+    public static boolean confusedChatEmote = false;
+    
+    @Setting(CHAT_EMOTES)
+    public static boolean unamusedChatEmote = false;
+    
+    @Setting(CHAT_EMOTES)
+    public static boolean prayChatEmote = false;
+    
+    @Setting(CHAT_EMOTES)
+    public static boolean kirbyChatEmote = false;
+    
     public static KeyBinding[] allKeys = new KeyBinding[] {zoomKey, openGUIKey, freeLookKey, itemUseCooldownOverrideKey};
     
     public static void setKeyCode(KeyBinding key, int keyCode)
