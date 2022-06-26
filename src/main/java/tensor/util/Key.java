@@ -5,6 +5,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.MathHelper;
 import tensor.Tensor;
+import tensor.option.TensorOptions;
 
 public class Key
 {
@@ -15,7 +16,6 @@ public class Key
     private final Color textColor;
     private final Color pressedTextColor;
     private final KeystrokeRenderer renderer;
-    private final int animationTime = 100;
     private float startAnimation = -1;
     private boolean wasPressed = false;
     
@@ -35,7 +35,7 @@ public class Key
         if(key.isPressed() != this.wasPressed)
             this.startAnimation = Util.getMeasuringTimeMs();
         DrawStuff.fillRect(matrixStack, this.rectangle.offset(offset), getColor());
-        if(Util.getMeasuringTimeMs() - this.startAnimation >= this.animationTime)
+        if(Util.getMeasuringTimeMs() - this.startAnimation >= TensorOptions.animationTime)
             this.startAnimation = -1;
         this.renderer.render(this.withOffset(offset), matrixStack);
         this.wasPressed = this.key.isPressed();
@@ -69,7 +69,7 @@ public class Key
     
     public float animationProgress()
     {
-        return this.startAnimation == -1 ? 1 : MathHelper.clamp((Util.getMeasuringTimeMs() - this.startAnimation) / this.animationTime, 0, 1);
+        return this.startAnimation == -1 ? 1 : MathHelper.clamp((Util.getMeasuringTimeMs() - this.startAnimation) / TensorOptions.animationTime, 0, 1);
     }
     
     public static Key create(KeyBinding keystroke, Rectangle rectangle)

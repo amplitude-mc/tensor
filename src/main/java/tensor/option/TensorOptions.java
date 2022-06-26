@@ -132,6 +132,9 @@ public class TensorOptions
     @Setting(CHAT_EMOTES)
     public static boolean kirbyChatEmote = false;
     
+    @Setting(KEYSTROKES)
+    public static int animationTime = 100;
+    
     public static KeyBinding[] allKeys = new KeyBinding[] {zoomKey, openGUIKey, freeLookKey, itemUseCooldownOverrideKey};
     
     public static void setKeyCode(KeyBinding key, int keyCode)

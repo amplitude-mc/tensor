@@ -48,6 +48,7 @@
   "keystrokes.shift": "Shift",
   "keystrokes.cps": "CPS",
   "keystrokes.cps_text": "CPS Text",
+  "keystrokes.animation_time": "Animation Time: %s",
 
   "text.youtube_api_key": "Youtube API Key: ",
   "text.youtube": "Youtube Channel ID: ",

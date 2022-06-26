@@ -167,4 +167,14 @@ public class TOptions
     public static final SimpleOption<Boolean> KIRBY_CHAT_EMOTE = SimpleOption.ofBoolean("chat_emotes.kirby_chat_emote",
         TensorOptions.kirbyChatEmote,
         (value) -> settingsManager.setSetting("kirbyChatEmote", value.toString()));
+    
+    public static final SimpleOption<Integer> ANIMATION_TIME = new SimpleOption<>("keystrokes.animation_time",
+        SimpleOption.emptyTooltip(),
+        (optionText, value) -> Text.translatable("keystrokes.animation_time", TensorOptions.animationTime),
+        new SimpleOption.ValidatingIntSliderCallbacks(2, 20).withModifier(
+            (sliderProgressValue) -> sliderProgressValue * 5,
+            (value) -> value / 5
+        ),
+        TensorOptions.animationTime,
+        (value) -> settingsManager.setSetting("animationTime", value.toString()));
 }
