@@ -74,25 +74,20 @@ public class Key
     
     public static Key create(KeyBinding keystroke, Rectangle rectangle)
     {
-        String name;
-        if(keystroke.getTranslationKey().equalsIgnoreCase(Tensor.client.options.attackKey.getTranslationKey()))
-            name = "LMB";
-        else if(keystroke.getTranslationKey().equalsIgnoreCase(Tensor.client.options.useKey.getTranslationKey()))
-            name = "RMB";
-        else if(keystroke.getTranslationKey().equalsIgnoreCase(Tensor.client.options.jumpKey.getTranslationKey()))
-            name = "";
-        else if(keystroke.getTranslationKey().equalsIgnoreCase(Tensor.client.options.sneakKey.getTranslationKey()))
-            name = "SHIFT";
-        else
-            name = keystroke.getBoundKeyLocalizedText().getString().toUpperCase();
-        return create(keystroke, name, rectangle);
-    }
-    
-    public static Key create(KeyBinding keystroke, String name, Rectangle rectangle)
-    {
         return new Key(keystroke, rectangle, new Color(0x64000000), new Color(0x64ffffff), new Color(0xffffffff), new Color(0xff000000),
             (key, matrixStack) ->
             {
+                String name;
+                if(keystroke.getTranslationKey().equalsIgnoreCase(Tensor.client.options.attackKey.getTranslationKey()))
+                    name = "LMB";
+                else if(keystroke.getTranslationKey().equalsIgnoreCase(Tensor.client.options.useKey.getTranslationKey()))
+                    name = "RMB";
+                else if(keystroke.getTranslationKey().equalsIgnoreCase(Tensor.client.options.jumpKey.getTranslationKey()))
+                    name = "";
+                else if(keystroke.getTranslationKey().equalsIgnoreCase(Tensor.client.options.sneakKey.getTranslationKey()))
+                    name = "SHIFT";
+                else
+                    name = keystroke.getBoundKeyLocalizedText().getString().toUpperCase();
                 Rectangle rect = key.getRectangle();
                 float x = rect.getX() + (float) rect.getWidth() / 2 - (float) Tensor.client.textRenderer.getWidth(name) / 2;
                 float y = rect.getY() + (float) rect.getHeight() / 2 - 4;
