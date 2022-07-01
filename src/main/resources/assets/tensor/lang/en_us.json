@@ -41,6 +41,8 @@
   "utility.zoom_fov": "Zoom FOV: %s",
   "utility.item_use_cooldown": "Item Use Cooldown: %s",
   "utility.item_use_cooldown_override_toggle": "IUC Override",
+  "utility.no_chat_signing": "No Chat Signing",
+  "utility.zoom_scroll": "Zoom Scroll",
 
   "keystrokes.wasd": "WASD",
   "keystrokes.mouse": "Mouse",
@@ -48,7 +50,7 @@
   "keystrokes.shift": "Shift",
   "keystrokes.cps": "CPS",
   "keystrokes.cps_text": "CPS Text",
-  "keystrokes.animation_time": "Animation Time: %s",
+  "keystrokes.keystrokes_animation_time": "Animation Time: %s",
 
   "text.youtube_api_key": "Youtube API Key: ",
   "text.youtube": "Youtube Channel ID: ",
@@ -69,10 +71,11 @@
   "keybinds.open_gui_key": "Open GUI",
   "keybinds.free_look_key": "Free Look",
   "keybinds.item_use_cooldown_override_key": "Item Use Cooldown Override",
+  "keybinds.jump_cooldown_override_key": "Jump cooldown Override",
 
+  "miscellaneous.jump_cooldown": "Jump Cooldown: %s",
+  "miscellaneous.jump_cooldown_override_toggle": "Jump Cooldown Override",
   "miscellaneous.no_portal_gui_closing": "No Portal GUI CLosing",
-  "miscellaneous.max_render_distance": "Max. Render Distance: %s",
-  "miscellaneous.max_render_distance_override_toggle": "Max. Rend. Dist. Override",
 
 
   "key.category.utility": "Utility",
@@ -80,5 +83,6 @@
   "key.category.toggles": "Toggles",
 
 
-  "toggle.item_use_cooldown": "IUC Override has been set to %s"
+  "toggle.item_use_cooldown": "IUC Override has been set to %s",
+  "toggle.jump_cooldown": "Jump Cooldown Override has been set to %s"
 }

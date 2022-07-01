@@ -57,13 +57,8 @@ public class SettingsManager
                     if(annotation == null)
                         continue;
                     for(KeyBinding keybind : TensorOptions.allKeys)
-                    {
                         if(annotation.value().equals(keybind.getTranslationKey()))
-                        {
                             keybind.setBoundKey(InputUtil.Type.KEYSYM.createFromCode(Integer.parseInt(conf.get(key))));
-                            Tensor.logger.info(key + " is a keybind");
-                        }
-                    }
                 }
             }
             catch(Exception e)
@@ -137,7 +132,6 @@ public class SettingsManager
     
     public void setSetting(String strSetting, String stringValue)
     {
-        Tensor.logger.info("Setting [" + strSetting + "] is being set to: " + stringValue);
         ParsedSetting<?> setting = settings.get(strSetting);
         if(setting == null)
             return;

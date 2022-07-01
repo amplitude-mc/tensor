@@ -14,9 +14,7 @@ public class NoPortalGuiClosing_ClientPlayerEntity
     private boolean onDoesGuiPauseGame(Screen gui)
     {
         if(TensorOptions.noPortalGUIClosing)
-        {
             return true;
-        }
         return gui.shouldPause();
     }
 }

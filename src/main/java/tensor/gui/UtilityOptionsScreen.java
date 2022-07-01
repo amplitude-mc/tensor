@@ -40,6 +40,6 @@ public class UtilityOptionsScreen extends GameOptionsScreen
     
     static
     {
-        OPTIONS = new SimpleOption<?>[] {TOptions.PERMANENT_SPRINT, TOptions.ZOOM_FOV, TOptions.ITEM_USE_COOLDOWN, TOptions.ITEM_USE_COOLDOWN_OVERRIDE_TOGGLE};
+        OPTIONS = new SimpleOption<?>[] {TOptions.PERMANENT_SPRINT, /* TOptions.NO_CHAT_SIGNING, */ TOptions.ZOOM_FOV, TOptions.ZOOM_SCROLL, TOptions.ITEM_USE_COOLDOWN, TOptions.ITEM_USE_COOLDOWN_OVERRIDE_TOGGLE};
     }
 }

@@ -20,12 +20,12 @@ public class FreeLook_MinecraftClient
         if(TensorOptions.freeLookKey.isPressed())
         {
             Tensor.client.options.setPerspective(Perspective.THIRD_PERSON_BACK);
-            freeLooking = true;
+            FreeLook_MinecraftClient.freeLooking = true;
         }
-        if(freeLooking && !TensorOptions.freeLookKey.isPressed())
+        if(FreeLook_MinecraftClient.freeLooking && !TensorOptions.freeLookKey.isPressed())
         {
             Tensor.client.options.setPerspective(Perspective.FIRST_PERSON);
-            freeLooking = false;
+            FreeLook_MinecraftClient.freeLooking = false;
         }
     }
 }

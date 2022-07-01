@@ -12,18 +12,18 @@ import tensor.option.TensorOptions;
 @Mixin(MinecraftClient.class)
 public class ItemUseCooldownOverrideToggle_MinecraftClient
 {
-    private static boolean toggleHeld = false;
+    private static boolean iUCToggleHeld = false;
     
     @Inject(method = "tick", at = @At("HEAD"))
     private void toggle(CallbackInfo info)
     {
         if(TensorOptions.itemUseCooldownOverrideKey.isPressed())
-            toggleHeld = true;
-        if(toggleHeld && !TensorOptions.itemUseCooldownOverrideKey.isPressed())
+            ItemUseCooldownOverrideToggle_MinecraftClient.iUCToggleHeld = true;
+        if(ItemUseCooldownOverrideToggle_MinecraftClient.iUCToggleHeld && !TensorOptions.itemUseCooldownOverrideKey.isPressed())
         {
             Tensor.settingsManager.setSetting("itemUseCooldownOverrideToggle", Boolean.valueOf(!TensorOptions.itemUseCooldownOverrideToggle).toString());
             Tensor.client.inGameHud.setOverlayMessage(Text.translatable("toggle.item_use_cooldown", (TensorOptions.itemUseCooldownOverrideToggle ? "§a" : "§c") + TensorOptions.itemUseCooldownOverrideToggle), false);
-            toggleHeld = false;
+            ItemUseCooldownOverrideToggle_MinecraftClient.iUCToggleHeld = false;
         }
     }
 }

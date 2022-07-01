@@ -15,10 +15,8 @@ public class OpenGUI_MinecraftClient
     private boolean openGUI(MinecraftClient client)
     {
         if(client.isRunning())
-        {
             if(TensorOptions.openGUIKey.isPressed())
                 client.setScreen(new TensorOptionsScreen(null, client.options));
-        }
         return client.isRunning();
     }
 }

@@ -40,6 +40,6 @@ public class KeystrokesOptionsScreen extends GameOptionsScreen
     
     static
     {
-        OPTIONS = new SimpleOption<?>[] {TOptions.WASD, TOptions.MOUSE, TOptions.SPACE, TOptions.SHIFT, TOptions.CPS, TOptions.CPS_TEXT, TOptions.ANIMATION_TIME};
+        OPTIONS = new SimpleOption<?>[] {TOptions.WASD, TOptions.MOUSE, TOptions.SPACE, TOptions.SHIFT, TOptions.CPS, TOptions.CPS_TEXT, TOptions.KEYSTROKES_ANIMATION_TIME};
     }
 }

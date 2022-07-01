@@ -40,6 +40,6 @@ public class MiscellaneousOptionsScreen extends GameOptionsScreen
     
     static
     {
-        OPTIONS = new SimpleOption<?>[] {TOptions.NO_PORTAL_GUI_CLOSING};
+        OPTIONS = new SimpleOption<?>[] {TOptions.JUMP_COOLDOWN, TOptions.JUMP_COOLDOWN_OVERRIDE_TOGGLE, TOptions.NO_PORTAL_GUI_CLOSING};
     }
 }

@@ -25,6 +25,9 @@
     "feature.CPS_Mouse",
     "feature.Control_MinecraftClient",
     "feature.ChatEmoji_ClientPlayerEntity",
+    "feature.JumpCooldown_LivingEntity",
+    "feature.JumpCooldownOverrideToggle_MinecraftClient",
+    "feature.ZoomScroll_Mouse",
 
     "optimization.Optimization_Quaternion"
   ],

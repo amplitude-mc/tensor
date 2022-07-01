@@ -133,9 +133,28 @@ public class TensorOptions
     public static boolean kirbyChatEmote = false;
     
     @Setting(KEYSTROKES)
-    public static int animationTime = 100;
+    public static int keystrokesAnimationTime = 100;
     
-    public static KeyBinding[] allKeys = new KeyBinding[] {zoomKey, openGUIKey, freeLookKey, itemUseCooldownOverrideKey};
+    @Setting
+    public static int jumpCooldown = 10;
+    
+    @Setting(KEYBINDS)
+    @Key("keybinds.jump_cooldown_override_key")
+    public static int jumpCooldownOverride = GLFW.GLFW_KEY_I;
+    public static KeyBinding jumpCooldownOverrideKey = new KeyBinding("keybinds.jump_cooldown_override_key", jumpCooldownOverride, "key.category.toggles");
+    
+    @Setting
+    public static boolean jumpCooldownOverrideToggle = false;
+    
+    // coming soon!!!
+    //
+    //@Setting(UTILITY)
+    //public static boolean noChatSigning = false;
+    
+    @Setting(UTILITY)
+    public static boolean zoomScroll = false;
+    
+    public static KeyBinding[] allKeys = new KeyBinding[] {zoomKey, openGUIKey, freeLookKey, itemUseCooldownOverrideKey, jumpCooldownOverrideKey};
     
     public static void setKeyCode(KeyBinding key, int keyCode)
     {

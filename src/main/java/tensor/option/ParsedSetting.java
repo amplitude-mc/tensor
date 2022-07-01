@@ -1,7 +1,5 @@
 package tensor.option;
 
-import tensor.Tensor;
-
 import java.lang.reflect.Field;
 
 public class ParsedSetting<T>
@@ -38,7 +36,6 @@ public class ParsedSetting<T>
     
     public ParsedSetting<T> set(String value)
     {
-        Tensor.logger.info("Currently setting the setting");
         if(type == String.class)
         {
             return set((T) value);

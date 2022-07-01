@@ -27,17 +27,17 @@ public abstract class FreeLook_Camera
         if(TensorOptions.freeLookKey.isPressed() && cameraEntity instanceof ClientPlayerEntity)
         {
             EntityInterface entityIF = (EntityInterface) cameraEntity;
-            if(firstTime && MinecraftClient.getInstance().player != null)
+            if(this.firstTime && MinecraftClient.getInstance().player != null)
             {
                 entityIF.setCameraYaw(MinecraftClient.getInstance().player.getYaw());
                 entityIF.setCameraPitch(MinecraftClient.getInstance().player.getPitch());
-                firstTime = false;
+                this.firstTime = false;
             }
             this.setRotation(entityIF.getCameraYaw(), entityIF.getCameraPitch());
         }
         if(!TensorOptions.freeLookKey.isPressed() && cameraEntity instanceof ClientPlayerEntity)
         {
-            firstTime = true;
+            this.firstTime = true;
         }
     }
 }

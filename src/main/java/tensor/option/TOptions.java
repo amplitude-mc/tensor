@@ -168,13 +168,37 @@ public class TOptions
         TensorOptions.kirbyChatEmote,
         (value) -> settingsManager.setSetting("kirbyChatEmote", value.toString()));
     
-    public static final SimpleOption<Integer> ANIMATION_TIME = new SimpleOption<>("keystrokes.animation_time",
+    public static final SimpleOption<Integer> KEYSTROKES_ANIMATION_TIME = new SimpleOption<>("keystrokes.keystrokes_animation_time",
         SimpleOption.emptyTooltip(),
-        (optionText, value) -> Text.translatable("keystrokes.animation_time", TensorOptions.animationTime),
+        (optionText, value) -> Text.translatable("keystrokes.keystrokes_animation_time", TensorOptions.keystrokesAnimationTime),
         new SimpleOption.ValidatingIntSliderCallbacks(2, 20).withModifier(
             (sliderProgressValue) -> sliderProgressValue * 5,
             (value) -> value / 5
         ),
-        TensorOptions.animationTime,
-        (value) -> settingsManager.setSetting("animationTime", value.toString()));
+        TensorOptions.keystrokesAnimationTime,
+        (value) -> settingsManager.setSetting("keystrokesAnimationTime", value.toString()));
+    
+    public static final SimpleOption<Integer> JUMP_COOLDOWN = new SimpleOption<>("miscellaneous.jump_cooldown",
+        SimpleOption.emptyTooltip(),
+        (optionText, value) -> Text.translatable("utility.item_use_cooldown", TensorOptions.jumpCooldown),
+        new SimpleOption.ValidatingIntSliderCallbacks(0, 20).withModifier(
+            (sliderProgressValue) -> sliderProgressValue,
+            (value) -> value
+        ),
+        TensorOptions.jumpCooldown,
+        (value) -> settingsManager.setSetting("jumpCooldown", value.toString()));
+    
+    public static final SimpleOption<Boolean> JUMP_COOLDOWN_OVERRIDE_TOGGLE = SimpleOption.ofBoolean("miscellaneous.jump_cooldown_override_toggle",
+        TensorOptions.jumpCooldownOverrideToggle,
+        (value) -> settingsManager.setSetting("jumpCooldownOverrideToggle", value.toString()));
+    
+    // coming soon!!!
+    //
+    //public static final SimpleOption<Boolean> NO_CHAT_SIGNING = SimpleOption.ofBoolean("utility.no_chat_signing",
+    //    TensorOptions.noChatSigning,
+    //    (value) -> settingsManager.setSetting("noChatSigning", value.toString()));
+    
+    public static final SimpleOption<Boolean> ZOOM_SCROLL = SimpleOption.ofBoolean("utility.zoom_scroll",
+        TensorOptions.zoomScroll,
+        (value) -> settingsManager.setSetting("zoomScroll", value.toString()));
 }

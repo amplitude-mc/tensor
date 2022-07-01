@@ -19,6 +19,6 @@ public class Minceraft_TitleScreen
     {
         if(TensorOptions.minceraft)
             return true;
-        return isMinceraft;
+        return this.isMinceraft;
     }
 }

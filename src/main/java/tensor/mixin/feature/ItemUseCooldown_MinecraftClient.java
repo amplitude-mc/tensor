@@ -18,8 +18,8 @@ public class ItemUseCooldown_MinecraftClient
     private void changeItemUse(MinecraftClient client, int cooldown)
     {
         if(TensorOptions.itemUseCooldownOverrideToggle)
-            itemUseCooldown = TensorOptions.itemUseCooldown;
+            this.itemUseCooldown = TensorOptions.itemUseCooldown;
         else
-            itemUseCooldown = 4;
+            this.itemUseCooldown = 4;
     }
 }

@@ -29,8 +29,6 @@ public abstract class ToggleSprint_ClientPlayerEntity extends AbstractClientPlay
     private void overrideSprint(CallbackInfo info)
     {
         if(TensorOptions.permanentSprint && !this.isSprinting() && !this.isUsingItem() && this.input.movementForward >= 0.8F && (this.getHungerManager().getFoodLevel() > 6.0F || this.getAbilities().allowFlying) && !this.hasStatusEffect(StatusEffects.BLINDNESS))
-        {
             this.setSprinting(true);
-        }
     }
 }

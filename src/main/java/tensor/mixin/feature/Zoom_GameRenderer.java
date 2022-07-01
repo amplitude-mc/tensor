@@ -1,6 +1,5 @@
 package tensor.mixin.feature;
 
-import tensor.option.TensorOptions;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.GameRenderer;
 import org.spongepowered.asm.mixin.Mixin;
@@ -8,6 +7,8 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import tensor.option.TensorOptions;
+import tensor.util.ZoomScroller;
 
 @Mixin(GameRenderer.class)
 public class Zoom_GameRenderer
@@ -22,16 +23,17 @@ public class Zoom_GameRenderer
     {
         if(TensorOptions.zoomKey.isPressed())
         {
-            info.setReturnValue((double) TensorOptions.zoomFOV);
-            client.options.smoothCameraEnabled = true;
-            zoomed = true;
+            info.setReturnValue(ZoomScroller.getZoom());
+            this.client.options.smoothCameraEnabled = true;
+            this.zoomed = true;
         }
-        if(!TensorOptions.zoomKey.isPressed() && zoomed)
+        if(!TensorOptions.zoomKey.isPressed() && this.zoomed)
         {
-            client.options.smoothCameraEnabled = originalSmooth;
-            zoomed = false;
+            this.client.options.smoothCameraEnabled = this.originalSmooth;
+            this.zoomed = false;
+            ZoomScroller.resetScroll();
         }
         if(!TensorOptions.zoomKey.isPressed())
-            originalSmooth = client.options.smoothCameraEnabled;
+            this.originalSmooth = this.client.options.smoothCameraEnabled;
     }
 }

@@ -20,8 +20,8 @@ public class TMixin_KeyBinding
     @Inject(method = "<init>", at = @At("RETURN"))
     private void addCategories(CallbackInfo info)
     {
-        CATEGORY_ORDER_MAP.put("key.category.utility", 8);
-        CATEGORY_ORDER_MAP.put("key.category.miscellaneous", 9);
-        CATEGORY_ORDER_MAP.put("key.category.toggles", 10);
+        TMixin_KeyBinding.CATEGORY_ORDER_MAP.put("key.category.utility", 8);
+        TMixin_KeyBinding.CATEGORY_ORDER_MAP.put("key.category.miscellaneous", 9);
+        TMixin_KeyBinding.CATEGORY_ORDER_MAP.put("key.category.toggles", 10);
     }
 }
