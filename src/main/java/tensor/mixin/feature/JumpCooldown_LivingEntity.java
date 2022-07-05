@@ -15,7 +15,11 @@ public class JumpCooldown_LivingEntity
     private int jumpingCooldown;
     private boolean firstTime = true;
     
-    @Inject(method = "tickMovement", at = @At("HEAD"))
+    @Inject
+    (
+        method = "tickMovement",
+        at = @At("HEAD")
+    )
     private void changeJumping(CallbackInfo info)
     {
         if(this.jumpingCooldown == 10 && this.firstTime && TensorOptions.jumpCooldownOverrideToggle)

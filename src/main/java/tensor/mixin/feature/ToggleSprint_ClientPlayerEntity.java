@@ -25,7 +25,16 @@ public abstract class ToggleSprint_ClientPlayerEntity extends AbstractClientPlay
         super(world, profile, playerPublicKey);
     }
     
-    @Inject(method = "tickMovement", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/player/PlayerAbilities;allowFlying:Z", ordinal = 1))
+    @Inject
+    (
+        method = "tickMovement",
+        at = @At
+        (
+            value = "FIELD",
+            target = "Lnet/minecraft/entity/player/PlayerAbilities;allowFlying:Z",
+            ordinal = 1
+        )
+    )
     private void overrideSprint(CallbackInfo info)
     {
         if(TensorOptions.permanentSprint && !this.isSprinting() && !this.isUsingItem() && this.input.movementForward >= 0.8F && (this.getHungerManager().getFoodLevel() > 6.0F || this.getAbilities().allowFlying) && !this.hasStatusEffect(StatusEffects.BLINDNESS))

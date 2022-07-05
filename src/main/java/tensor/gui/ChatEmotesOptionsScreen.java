@@ -11,12 +11,12 @@ import net.minecraft.screen.ScreenTexts;
 import net.minecraft.text.Text;
 import tensor.option.TOptions;
 
-public class VisualsOptionsScreen extends GameOptionsScreen
+public class ChatEmotesOptionsScreen extends GameOptionsScreen
 {
     private static final SimpleOption<?>[] OPTIONS;
     private ButtonListWidget list;
     
-    public VisualsOptionsScreen(Screen parent, GameOptions gameOptions, Text title)
+    public ChatEmotesOptionsScreen(Screen parent, GameOptions gameOptions, Text title)
     {
         super(parent, gameOptions, title);
     }
@@ -40,6 +40,6 @@ public class VisualsOptionsScreen extends GameOptionsScreen
     
     static
     {
-        OPTIONS = new SimpleOption<?>[] {TOptions.MINCERAFT, TOptions.YOUTUBE_SUB_COUNT, TOptions.SPRINTING_TEXT, TOptions.STATIC_CROSSHAIR_COLOR};
+        OPTIONS = new SimpleOption<?>[] {TOptions.WAVE_CHAT_EMOTE, TOptions.SHRUG_CHAT_EMOTE, TOptions.TABLEFLIP_CHAT_EMOTE, TOptions.TABLEBACK_CHAT_EMOTE, TOptions.GIMME_CHAT_EMOTE, TOptions.WIZARD_CHAT_EMOTE, TOptions.CONFUSED_CHAT_EMOTE, TOptions.UNAMUSED_CHAT_EMOTE, TOptions.PRAY_CHAT_EMOTE, TOptions.KIRBY_CHAT_EMOTE, TOptions.SKULL_CHAT_EMOTE, TOptions.SUS_CHAT_EMOTE, TOptions.HEART_CHAT_EMOTE, TOptions.STAR_CHAT_EMOTE, TOptions.ARROW_CHAT_EMOTE, TOptions.JAVA_CHAT_EMOTE};
     }
 }

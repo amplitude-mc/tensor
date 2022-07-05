@@ -8,7 +8,7 @@ public class ZoomScroller
     
     public static void addScroll(double scroll)
     {
-        double wouldBe = ZoomScroller.zoom - 2 * scroll;
+        double wouldBe = ZoomScroller.zoom - TensorOptions.zoomScrollFactor * scroll;
         if(wouldBe < 180 && wouldBe > 0)
             ZoomScroller.zoom = wouldBe;
     }

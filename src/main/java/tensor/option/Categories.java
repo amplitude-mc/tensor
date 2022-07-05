@@ -10,4 +10,5 @@ public class Categories
     public static final String TEXTFIELDS = "Text Fields";
     public static final String KEYSTROKES = "Keystrokes";
     public static final String CHAT_EMOTES = "Chat Emotes";
+    public static final String OPTIMIZATION = "Optimization";
 }

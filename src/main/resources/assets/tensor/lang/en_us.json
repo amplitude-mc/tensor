@@ -9,6 +9,7 @@
   "options.keystrokes": "Keystrokes",
   "options.text": "Text Fields",
   "options.control": "Control",
+  "options.optimization": "Optimization",
   "options.dont_click": "Don't Click Here!!!",
   "options.keybinds": "Keybinds",
   "options.miscellaneous": "Miscellaneous",
@@ -17,6 +18,7 @@
   "visuals.minceraft": "Minceraft",
   "visuals.youtube_sub_count": "Youtube Sub Count",
   "visuals.sprinting_text": "Sprinting Text",
+  "visuals.static_crosshair_color": "Static Crosshair Color",
 
   "chat_emotes.wave_chat_emote": "o/ ",
   "chat_emotes.shrug_chat_emote": ":shrug: ",
@@ -43,6 +45,7 @@
   "utility.item_use_cooldown_override_toggle": "IUC Override",
   "utility.no_chat_signing": "No Chat Signing",
   "utility.zoom_scroll": "Zoom Scroll",
+  "utility.zoom_scroll_factor": "Zoom Scroll Factor: %s",
 
   "keystrokes.wasd": "WASD",
   "keystrokes.mouse": "Mouse",
@@ -64,6 +67,8 @@
   "control.sneak": "Sneak",
   "control.attack": "Attack",
   "control.use": "Use",
+
+  "optimization.fast_trig": "Fast Trig",
 
   "dont_click.link": "Don't Click This Button!!!",
 

@@ -11,7 +11,11 @@ import tensor.util.CPSCounter;
 @Mixin(MinecraftClient.class)
 public class CPS_MinecraftClient
 {
-    @Inject(method = "tick", at = @At("HEAD"))
+    @Inject
+    (
+        method = "tick",
+        at = @At("HEAD")
+    )
     private void onTick(CallbackInfo info)
     {
         CPSCounter.tick();

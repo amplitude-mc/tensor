@@ -10,7 +10,15 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(ClientPlayerEntity.class)
 public class NoPortalGuiClosing_ClientPlayerEntity
 {
-    @Redirect(method = "updateNausea", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screen/Screen;shouldPause()Z"))
+    @Redirect
+    (
+        method = "updateNausea",
+        at = @At
+        (
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/gui/screen/Screen;shouldPause()Z"
+        )
+    )
     private boolean onDoesGuiPauseGame(Screen gui)
     {
         if(TensorOptions.noPortalGUIClosing)

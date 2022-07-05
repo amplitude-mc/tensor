@@ -9,7 +9,12 @@ import tensor.option.TensorOptions;
 @Mixin(ClientPlayerEntity.class)
 public class ChatEmoji_ClientPlayerEntity
 {
-    @ModifyVariable(method = "sendChatMessage(Ljava/lang/String;Lnet/minecraft/text/Text;)V", at = @At("HEAD"), ordinal = 0)
+    @ModifyVariable
+    (
+        method = "sendChatMessage(Ljava/lang/String;Lnet/minecraft/text/Text;)V",
+        at = @At("HEAD"),
+        ordinal = 0
+    )
     public String changeEmoji(String message)
     {
         if(TensorOptions.waveChatEmote)

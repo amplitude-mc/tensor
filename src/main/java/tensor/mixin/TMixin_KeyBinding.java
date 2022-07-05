@@ -17,7 +17,11 @@ public class TMixin_KeyBinding
     @Final
     private static Map<String, Integer> CATEGORY_ORDER_MAP;
     
-    @Inject(method = "<init>", at = @At("RETURN"))
+    @Inject
+    (
+        method = "<init>",
+        at = @At("RETURN")
+    )
     private void addCategories(CallbackInfo info)
     {
         TMixin_KeyBinding.CATEGORY_ORDER_MAP.put("key.category.utility", 8);

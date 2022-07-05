@@ -8,19 +8,25 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import tensor.Tensor;
 import tensor.option.TensorOptions;
+import tensor.util.KeyBindManager;
 import tensor.util.ZoomScroller;
 
 @Mixin(Mouse.class)
 public class ZoomScroll_Mouse
 {
-    @Inject(method = "onMouseScroll", at = @At("HEAD"))
-    private double getScroll(long window, double horizontal, double vertical, CallbackInfo info)
+    @ModifyVariable
+    (
+        method = "onMouseScroll",
+        at = @At("STORE"),
+        ordinal = 2
+    )
+    private double getScroll(double scroll)
     {
-        if(vertical == 0)
-            vertical = horizontal;
-        double scroll = (Tensor.client.options.getDiscreteMouseScroll().getValue() ? Math.signum(vertical) : vertical) * Tensor.client.options.getMouseWheelSensitivity().getValue();
-        if(TensorOptions.zoomScroll)
+        if(TensorOptions.zoomScroll && KeyBindManager.zooming())
+        {
             ZoomScroller.addScroll(scroll);
+            return 0;
+        }
         return scroll;
     }
 }

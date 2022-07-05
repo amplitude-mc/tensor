@@ -36,26 +36,16 @@ public class ParsedSetting<T>
     
     public ParsedSetting<T> set(String value)
     {
-        if(type == String.class)
-        {
+        if(this.type == String.class)
             return set((T) value);
-        }
-        else if(type == boolean.class)
-        {
+        else if(this.type == boolean.class)
             return set((T) (Object) Boolean.parseBoolean(value));
-        }
-        else if(type == int.class)
-        {
+        else if(this.type == int.class)
             return set((T) (Object) Integer.parseInt(value));
-        }
-        else if(type == double.class)
-        {
+        else if(this.type == double.class)
             return set((T) (Object) Double.parseDouble(value));
-        }
         else
-        {
             return null;
-        }
     }
     
     public ParsedSetting<T> set(T value)

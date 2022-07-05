@@ -14,7 +14,16 @@ public class ItemUseCooldown_MinecraftClient
     @Shadow
     private int itemUseCooldown;
     
-    @Redirect(method = "doItemUse", at = @At(value = "FIELD", target = "Lnet/minecraft/client/MinecraftClient;itemUseCooldown:I", opcode = Opcodes.PUTFIELD))
+    @Redirect
+    (
+        method = "doItemUse",
+        at = @At
+        (
+            value = "FIELD",
+            target = "Lnet/minecraft/client/MinecraftClient;itemUseCooldown:I",
+            opcode = Opcodes.PUTFIELD
+        )
+    )
     private void changeItemUse(MinecraftClient client, int cooldown)
     {
         if(TensorOptions.itemUseCooldownOverrideToggle)

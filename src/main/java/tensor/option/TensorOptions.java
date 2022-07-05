@@ -154,6 +154,15 @@ public class TensorOptions
     @Setting(UTILITY)
     public static boolean zoomScroll = false;
     
+    @Setting(OPTIMIZATION)
+    public static boolean fastTrig = false;
+    
+    @Setting(VISUALS)
+    public static boolean staticCrosshairColor = false;
+    
+    @Setting(UTILITY)
+    public static double zoomScrollFactor = 2.0;
+    
     public static KeyBinding[] allKeys = new KeyBinding[] {zoomKey, openGUIKey, freeLookKey, itemUseCooldownOverrideKey, jumpCooldownOverrideKey};
     
     public static void setKeyCode(KeyBinding key, int keyCode)

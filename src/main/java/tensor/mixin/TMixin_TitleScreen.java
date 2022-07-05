@@ -19,7 +19,11 @@ public class TMixin_TitleScreen extends Screen
         super(title);
     }
     
-    @Inject(method = "initWidgetsNormal", at = @At("RETURN"))
+    @Inject
+    (
+        method = "initWidgetsNormal",
+        at = @At("RETURN")
+    )
     private void addButton(CallbackInfo info)
     {
         this.addDrawableChild(new ButtonWidget(this.width / 2 + 104 + 25, this.height / 4 + 48 + 72 + 12, 100, 20, Text.translatable("title.tensor"), (button) ->

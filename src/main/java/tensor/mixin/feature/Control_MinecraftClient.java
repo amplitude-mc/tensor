@@ -11,7 +11,11 @@ import tensor.util.ControlStuff;
 @Mixin(MinecraftClient.class)
 public class Control_MinecraftClient
 {
-    @Inject(method = "tick", at = @At("HEAD"))
+    @Inject
+    (
+        method = "tick",
+        at = @At("HEAD")
+    )
     private void onTick(CallbackInfo info)
     {
         if(!Tensor.client.options.forwardKey.isPressed())

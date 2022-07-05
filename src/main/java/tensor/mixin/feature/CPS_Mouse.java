@@ -10,7 +10,11 @@ import tensor.util.CPSCounter;
 @Mixin(Mouse.class)
 public class CPS_Mouse
 {
-    @Inject(method = "onMouseButton", at = @At("HEAD"))
+    @Inject
+    (
+        method = "onMouseButton",
+        at = @At("HEAD")
+    )
     private void clicked(long window, int button, int action, int mods, CallbackInfo info)
     {
         if(action == 1)

@@ -1,8 +1,5 @@
 package tensor.mixin.feature;
 
-import tensor.option.TensorOptions;
-import tensor.util.EntityInterface;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.Camera;
 import net.minecraft.entity.Entity;
@@ -11,7 +8,11 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Slice;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import tensor.Tensor;
+import tensor.util.EntityInterface;
+import tensor.util.KeyBindManager;
 
 @Mixin(Camera.class)
 public abstract class FreeLook_Camera
@@ -21,23 +22,42 @@ public abstract class FreeLook_Camera
     @Shadow
     public abstract void setRotation(float yaw, float pitch);
     
-    @Inject(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/Camera;setRotation(FF)V", ordinal = 0, shift = At.Shift.AFTER))
-    public void lockRotation(BlockView focusedBlock, Entity cameraEntity, boolean isThirdPerson, boolean isFrontFacing, float f, CallbackInfo ci)
+    @Inject
+    (
+        method = "update",
+        at = @At
+        (
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/render/Camera;setRotation(FF)V",
+            shift = At.Shift.AFTER
+        ),
+        slice = @Slice
+        (
+            to = @At
+            (
+                value = "INVOKE",
+                target = "Lnet/minecraft/client/render/Camera;setPos(DDD)V"
+            )
+        )
+    )
+    public void lockRotation(BlockView area, Entity cameraEntity, boolean thirdPerson, boolean frontFacing, float tickDelta, CallbackInfo info)
     {
-        if(TensorOptions.freeLookKey.isPressed() && cameraEntity instanceof ClientPlayerEntity)
+        if(cameraEntity instanceof ClientPlayerEntity)
         {
-            EntityInterface entityIF = (EntityInterface) cameraEntity;
-            if(this.firstTime && MinecraftClient.getInstance().player != null)
+            if(KeyBindManager.freeLooking())
             {
-                entityIF.setCameraYaw(MinecraftClient.getInstance().player.getYaw());
-                entityIF.setCameraPitch(MinecraftClient.getInstance().player.getPitch());
-                this.firstTime = false;
+                EntityInterface entityIF = (EntityInterface) cameraEntity;
+                if(this.firstTime && Tensor.client.player != null)
+                {
+                    entityIF.setCameraYaw(Tensor.client.player.getYaw());
+                    entityIF.setCameraPitch(Tensor.client.player.getPitch());
+                    this.firstTime = false;
+                }
+                this.setRotation(entityIF.getCameraYaw(), entityIF.getCameraPitch());
+            } else
+            {
+                this.firstTime = true;
             }
-            this.setRotation(entityIF.getCameraYaw(), entityIF.getCameraPitch());
-        }
-        if(!TensorOptions.freeLookKey.isPressed() && cameraEntity instanceof ClientPlayerEntity)
-        {
-            this.firstTime = true;
         }
     }
 }

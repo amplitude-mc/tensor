@@ -14,7 +14,16 @@ public class Minceraft_TitleScreen
     @Shadow
     private boolean isMinceraft;
     
-    @Redirect(method = "render", at = @At(value = "FIELD", target = "Lnet/minecraft/client/gui/screen/TitleScreen;isMinceraft:Z", opcode = Opcodes.GETFIELD))
+    @Redirect
+    (
+        method = "render",
+        at = @At
+        (
+            value = "FIELD",
+            target = "Lnet/minecraft/client/gui/screen/TitleScreen;isMinceraft:Z",
+            opcode = Opcodes.GETFIELD
+        )
+    )
     private boolean makeMincecraft(TitleScreen titleScreen)
     {
         if(TensorOptions.minceraft)

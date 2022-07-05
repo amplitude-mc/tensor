@@ -39,7 +39,7 @@ public class SettingsManager
             if(setting == null)
                 continue;
             ParsedSetting parsedSetting = new ParsedSetting(field, setting, this);
-            settings.put(parsedSetting.name, parsedSetting);
+            this.settings.put(parsedSetting.name, parsedSetting);
         }
     }
     
@@ -50,7 +50,7 @@ public class SettingsManager
         {
             try
             {
-                if(settings.get(key).set(conf.get(key)) != null)
+                if(this.settings.get(key).set(conf.get(key)) != null)
                 {
                     Field field = TensorOptions.class.getField(key);
                     Key annotation = field.getAnnotation(Key.class);
@@ -80,7 +80,7 @@ public class SettingsManager
                 String[] fields = line.split("\\s+", 2);
                 if(fields.length > 1)
                 {
-                    if(!settings.containsKey(fields[0]))
+                    if(!this.settings.containsKey(fields[0]))
                     {
                         continue;
                     }
@@ -115,7 +115,7 @@ public class SettingsManager
         {
             for(String key : values.keySet())
             {
-                if(values.get(key).equals(settings.get(key).defaultValue.toString()))
+                if(values.get(key).equals(this.settings.get(key).defaultValue.toString()))
                 {
                     writer.newLine();
                     continue;
@@ -132,7 +132,7 @@ public class SettingsManager
     
     public void setSetting(String strSetting, String stringValue)
     {
-        ParsedSetting<?> setting = settings.get(strSetting);
+        ParsedSetting<?> setting = this.settings.get(strSetting);
         if(setting == null)
             return;
         setting.set(stringValue);

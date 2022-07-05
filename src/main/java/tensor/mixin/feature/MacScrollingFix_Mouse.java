@@ -9,7 +9,12 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 @Mixin(Mouse.class)
 public class MacScrollingFix_Mouse
 {
-    @ModifyVariable(method = "onMouseScroll", at = @At("HEAD"), index = 5)
+    @ModifyVariable
+    (
+        method = "onMouseScroll",
+        at = @At("HEAD"),
+        index = 5
+    )
     private double scrollFix(double vertical1, long window, double horizontal, double vertical)
     {
         if(TensorOptions.macScrollingFix)
